@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'home' => 'staticpages#welcome'
+  root 'staticpages#welcome'
 
   get 'contact' => 'staticpages#contact'
 
