@@ -12,6 +12,12 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.body %></td>
+      <td><%= link_to 'Ver', article_path(article) %></td>
+      <td><%= link_to 'Editar', edit_article_path(article) %></td>
+      <td><%= link_to 'Eliminar', article_path(article),
+        method: :delete,
+        data: { confirm: "¿Seguro que quieres eliminar #{article.title}?" } %>
+      </td>
     </tr>
   <% end %>
 </table>

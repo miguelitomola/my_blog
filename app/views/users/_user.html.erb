@@ -1,0 +1,38 @@
+<%= form_for @user do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %>
+        . No es posible registrar al usuario:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<ul class="formList">
+  <li>
+    <%= f.label "Nombre de usuario" %> <br>
+    <%= f.text_field :username %>
+  </li>
+  <li>
+    <%= f.label "Email" %> <br> 
+    <%= f.text_field :email %>
+  </li>
+  <li>
+    <%= f.label "Contraseña" %> <br>
+    <%= f.password_field :password %>
+  </li>
+  <li>
+    <%= f.label "Confirma la contraseña" %> <br>
+    <%= f.password_field :password_confirmation %>
+  </li>
+  <li>
+    <%= f.submit "Registrar" %> 
+  </li>
+</ul>
+<% end %>

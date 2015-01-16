@@ -3,12 +3,25 @@
 <head>
   <title>MyBlog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<%= notice %>
+
+  <div id="user_nav">
+    <% if current_user %>
+      <%= link_to "Editar perfil", edit_user_path(:current) %>
+      <%= link_to "Logout", logout_path %>
+    <% else %>
+      <%= link_to "Regístrate", new_user_path %>
+      <%= link_to "Inicia sesión", login_path %>
+    <% end %>
+  </div>
+
+  <%= yield %>
 
 </body>
 </html>
