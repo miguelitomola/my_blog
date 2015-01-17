@@ -11,6 +11,12 @@
 
 	<%= notice %>
 
+  <% if current_user %>
+      <% if current_user.admin_flag == true %>
+      <%=link_to 'Usuarios', users_path %>
+      <% end %>
+  <% end %>
+
   <div id="user_nav">
     <% if current_user %>
       <%= link_to "Editar perfil", edit_user_path(:current) %>

@@ -1,10 +1,23 @@
 class UsersController < ApplicationController
+
+  def index
+    if current_user && current_user.admin_flag == true
+      @users = User.all
+    else
+      @error = "Only admins can see this information"
+    end
+  end
+
   def new
   	@user = User.new
   end
 
   def edit
-    @user = User.find(current_user)
+    if User.find_by(id: params[:id])
+      @user = User.find(params[:id])
+    else
+      @user = User.find(current_user)
+    end
   end
 
   def create
@@ -30,7 +43,7 @@ class UsersController < ApplicationController
 
   private
   	def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :admin_flag)
   	end
 
 end

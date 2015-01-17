@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'user_sessions/new'
-
   root 'staticpages#welcome'
 
   get 'contact' => 'staticpages#contact'

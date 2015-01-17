@@ -31,8 +31,16 @@
     <%= f.label "Confirma la contraseña" %> <br>
     <%= f.password_field :password_confirmation %>
   </li>
+
+  <% if current_user && current_user.admin_flag == true %>
+    <li>
+      <%= f.label "Usuario administrador" %>
+      <%= f.check_box :admin_flag %>
+    </li>
+  <% end %>
+
   <li>
-    <%= f.submit "Registrar" %> 
+    <%= f.submit "Aceptar" %> 
   </li>
 </ul>
 <% end %>

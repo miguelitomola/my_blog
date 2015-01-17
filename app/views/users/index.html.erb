@@ -1,0 +1,36 @@
+<%= link_to 'Inicio', root_path %>
+
+<% if current_user && current_user.admin_flag == true %>
+  <h1>Usuarios registrados</h1>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Nombre de usuario</th>
+          <th>Email</th>
+          <th>Administrador</th>
+          <th>Fecha de registro</th>
+          <th>Fecha de actualización</th>
+          <th>Enlaces</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user|%>
+    	    <tr>
+    	      <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td><%= user.admin_flag %></td>
+            <td><%= user.created_at %></td>
+            <td><%= user.updated_at %></td>
+            <td><%= link_to 'Editar  ', edit_user_path(user)%>||<%= link_to '  Eliminar' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+  
+  </table>
+
+<% else %>
+  <p><%= @error %></p>
+<% end %>
