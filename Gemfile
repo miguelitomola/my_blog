@@ -41,3 +41,6 @@ gem 'spring',        group: :development
 # Authentication solution: authlogic
 gem 'authlogic'
 
+#CSS preprocessor: SASS
+gem 'sass'
+

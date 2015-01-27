@@ -7,8 +7,11 @@
   <strong>Comment:</strong>
   <%= comment.body %>
 </p>
-<p>
-	<%= link_to 'Eliminar comentario', [comment.article, comment],
-	             method: :delete,
-	             data: { confirm: '¿Estás seguro de que quieres eliminar este comentario?' } %>
-</p>
+
+<% if current_user && current_user.admin_flag == true %>
+	<p>
+		<%= link_to 'Eliminar comentario', [comment.article, comment],
+		             method: :delete,
+		             data: { confirm: '¿Estás seguro de que quieres eliminar este comentario?' } %>
+	</p>
+<% end %>

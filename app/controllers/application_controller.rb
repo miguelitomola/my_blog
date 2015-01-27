@@ -15,11 +15,21 @@ class ApplicationController < ActionController::Base
       @current_user = current_user_session && current_user_session.record
     end
 
+    def require_admin
+      logger.debug "ApplicationController::require_user"
+      unless current_user && current_user.admin_flag == true
+        store_location
+        flash[:notice] = "Para acceder a esta página tienes que ser administrador"
+        redirect_to new_user_session_url
+        return false
+      end
+    end
+
     def require_user
       logger.debug "ApplicationController::require_user"
       unless current_user
         store_location
-        flash[:notice] = "You must be logged in to access this page"
+        flash[:notice] = "Para esta acción debes iniciar sesión"
         redirect_to new_user_session_url
         return false
       end
@@ -29,7 +39,7 @@ class ApplicationController < ActionController::Base
       logger.debug "ApplicationController::require_no_user"
       if current_user
         store_location
-        flash[:notice] = "You must be logged out to access this page"
+        flash[:notice] = "Para esta acción debes finalizar sesión"
         redirect_to account_url
         return false
     end

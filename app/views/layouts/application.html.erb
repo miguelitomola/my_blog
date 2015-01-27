@@ -10,12 +10,16 @@
 <body>
 
 	<%= notice %>
-
-  <% if current_user %>
-      <% if current_user.admin_flag == true %>
-      <%=link_to 'Usuarios', users_path %>
-      <% end %>
-  <% end %>
+  <nav>
+    <%= link_to 'Inicio', root_path %>
+    <%= link_to 'Contacto', contact_path %>
+    
+    <% if current_user && current_user.admin_flag == true%>
+      <%= link_to 'Usuarios', users_path %>
+      <%= link_to 'Nuevo artículo', new_article_path %>
+    <% end %>
+    
+  </nav>
 
   <div id="user_nav">
     <% if current_user %>
