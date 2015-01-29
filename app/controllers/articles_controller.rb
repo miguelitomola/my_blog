@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-	before_action :require_admin, only: [:new, :edit, :create, :update]
+	before_action :require_admin, only: [:new, :edit, :create, :update, :destroy]
 
 	def index
   	@articles = Article.all

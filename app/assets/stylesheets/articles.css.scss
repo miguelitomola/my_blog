@@ -9,6 +9,16 @@ $turquoise: rgb(17, 89, 95);
 	color: $turquoise;
 }
 
+.h2{
+	font-size: 2rem;
+	color: blue;
+}
+
 .underline{
 	border-bottom: 1px solid $turquoise;
+}
+
+.article{
+	background-color: green;
+	width: 50%;
 }
