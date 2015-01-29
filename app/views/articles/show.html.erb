@@ -1,6 +1,15 @@
 <p>
-  <strong>Título:</strong>
-  <%= @article.title %>
+  <span>
+  	<%= @article.title %>
+  </span>
+  <span>
+  	<%= link_to 'Editar', edit_article_path(@article) %>
+  </span>
+  <span>
+  	<%= link_to 'Eliminar', article_path(@article),
+        method: :delete,
+        data: { confirm: "¿Seguro que quieres eliminar #{@article.title}?" } %>
+  </span>
 </p>
  
 <p>

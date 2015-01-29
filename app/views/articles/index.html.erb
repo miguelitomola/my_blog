@@ -1,20 +1,12 @@
-<h1>Listado de artículos</h1>
+<h1 class="h1 underline">Listado de artículos</h1>
  
 <table>
-  <tr>
-    <th>Título</th>
-    <th>Texto</th>
-  </tr>
  
   <% @articles.each do |article| %>
+      <td><%= link_to "#{article.title}", article_path(article) %></td>
+    <tr></tr>
     <tr>
-      <td><%= article.title %></td>
       <td><%= article.body %></td>
-      <td><%= link_to 'Ver', article_path(article) %></td>
-      <td><%= link_to 'Editar', edit_article_path(article) %></td>
-      <td><%= link_to 'Eliminar', article_path(article),
-        method: :delete,
-        data: { confirm: "¿Seguro que quieres eliminar #{article.title}?" } %>
       </td>
     </tr>
   <% end %>
