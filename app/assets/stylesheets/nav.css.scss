@@ -1,0 +1,14 @@
+//Font variables:
+$user_nav-font: 'Bree Serif', serif;
+
+.user_nav{
+	float: right;
+	font-size: 1.2rem;
+	font-family: $user_nav-font;
+}
+
+.general_nav{
+	float: left;
+	font-family: $user_nav-font;
+	font-size: 1.2rem;
+}

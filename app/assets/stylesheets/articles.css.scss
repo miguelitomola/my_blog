@@ -2,16 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//Color variables:
 $turquoise: rgb(17, 89, 95);
+$green-transparent: rgba(55, 216, 55, 0.55);
+
+//Font variables:
+$header-font: 'Dekko', cursive;
+$article-font: 'Original Surfer', cursive;
 
 .h1{
 	font-size: 3rem;
+	font-family: $header-font;
 	color: $turquoise;
+	padding-top: 4rem;
 }
 
 .h2{
 	font-size: 2rem;
 	color: blue;
+	font-family: $header-font;
+	text-decoration: none;
+}
+
+.h2:link{
+  color: $turquoise;
+}
+
+.h2:visited{
+  color: dark-blue;
+}
+
+.h2:hover{
+  color: red;
+}
+
+.h2:active{
+	text-decoration: underline; 
 }
 
 .underline{
@@ -19,6 +45,8 @@ $turquoise: rgb(17, 89, 95);
 }
 
 .article{
-	background-color: green;
+	background-color: $green-transparent;
 	width: 50%;
+	font-size: 1rem;
+	font-family: $article-font;
 }

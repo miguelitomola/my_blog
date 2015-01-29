@@ -4,13 +4,15 @@
   <title>MyBlog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Dekko' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Original+Surfer' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 	<%= notice %>
-  <nav>
+  <nav class="general_nav">
     <%= link_to 'Inicio', root_path %>
     <%= link_to 'Contacto', contact_path %>
     
@@ -21,7 +23,7 @@
     
   </nav>
 
-  <div id="user_nav">
+  <nav class="user_nav">
     <% if current_user %>
       <%= link_to "Editar perfil", edit_user_path(:current) %>
       <%= link_to "Logout", logout_path %>
@@ -29,7 +31,7 @@
       <%= link_to "Regístrate", new_user_path %>
       <%= link_to "Inicia sesión", login_path %>
     <% end %>
-  </div>
+  </nav>
 
   <%= yield %>
 
