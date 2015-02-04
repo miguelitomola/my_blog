@@ -1,9 +1,15 @@
-<h1 class="h1 underline">Listado de artículos</h1>
+<h1 class="h1 title underline">el blog de miguelitomola</h1>
  
 <% @articles.each do |article| %>
-  <h2 class="h2"><%= link_to "#{article.title}", article_path(article), class:"h2" %></h2>
-    
   <article class="article">
-  	<%= article.body %>
+    
+    <h2 class="h2">
+      <%= link_to "#{article.title}", article_path(article), class:"h2" %>
+    </h2>
+    <p>
+    	<%= article.body %>
+    </p>
+  
   </article> 
 <% end %>
+

@@ -1,19 +1,20 @@
-<p>
+<h1 class="h1 title">el blog de miguelitomola</h1>
+
+<section class="title underline">
+  <h2 class="h2 inline">
+    <%= @article.title %>
+  </h2>
   <span>
-  	<%= @article.title %>
+    - <%= link_to 'Editar', edit_article_path(@article) %> ||
   </span>
   <span>
-  	<%= link_to 'Editar', edit_article_path(@article) %>
-  </span>
-  <span>
-  	<%= link_to 'Eliminar', article_path(@article),
+    <%= link_to 'Eliminar', article_path(@article),
         method: :delete,
-        data: { confirm: "¿Seguro que quieres eliminar #{@article.title}?" } %>
+        data: { confirm: "¿Seguro que quieres eliminar #{@article.title}?" } %> -
   </span>
-</p>
+</section>
  
-<p>
-  <strong>Texto:</strong>
+<p class="article">
   <%= @article.body %>
 </p>
 

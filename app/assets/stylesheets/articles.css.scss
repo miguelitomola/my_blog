@@ -5,10 +5,23 @@
 //Color variables:
 $turquoise: rgb(17, 89, 95);
 $green-transparent: rgba(55, 216, 55, 0.55);
+$blue-transparent: rgba(0, 20, 89, 0.79);
 
 //Font variables:
 $header-font: 'Dekko', cursive;
 $article-font: 'Original Surfer', cursive;
+
+body{
+	background-color: $blue-transparent;
+}
+
+.main_section{
+	padding: 1.2rem;
+	width: 80%;
+	margin: 0 auto;
+	background-color: white;
+	min-height: 40rem;
+}
 
 .h1{
 	font-size: 3rem;
@@ -22,31 +35,36 @@ $article-font: 'Original Surfer', cursive;
 	color: blue;
 	font-family: $header-font;
 	text-decoration: none;
+	:link{
+    color: $turquoise;
+	}
+  :visited{
+    color: dark-blue;
+  }
+  :hover{
+    color: red;
+  }
+  :active{
+  	text-decoration: underline; 
+  }
 }
 
-.h2:link{
-  color: $turquoise;
-}
-
-.h2:visited{
-  color: dark-blue;
-}
-
-.h2:hover{
-  color: red;
-}
-
-.h2:active{
-	text-decoration: underline; 
+.inline{
+	display: inline;
 }
 
 .underline{
 	border-bottom: 1px solid $turquoise;
 }
 
+.title{
+	text-align: center;
+}
+
 .article{
 	background-color: $green-transparent;
-	width: 50%;
 	font-size: 1rem;
 	font-family: $article-font;
+	margin: 1rem;
 }
+
