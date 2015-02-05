@@ -5,10 +5,20 @@ $user_nav-font: 'Bree Serif', serif;
 	float: right;
 	font-size: 1.2rem;
 	font-family: $user_nav-font;
+	background-color: blue;
+  a{
+  	text-decoration: none;
+		color: white;
+	}
 }
 
 .general_nav{
 	float: left;
 	font-family: $user_nav-font;
 	font-size: 1.2rem;
+	background-color: blue;
+	a{
+		text-decoration: none;
+		color: white;
+	}
 }

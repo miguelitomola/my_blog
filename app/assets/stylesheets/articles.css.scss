@@ -34,18 +34,9 @@ body{
 	font-size: 2rem;
 	color: blue;
 	font-family: $header-font;
-	text-decoration: none;
-	:link{
-    color: $turquoise;
-	}
-  :visited{
-    color: dark-blue;
-  }
-  :hover{
-    color: red;
-  }
-  :active{
-  	text-decoration: underline; 
+	a{
+		text-decoration: none;
+		color: $blue-transparent;
   }
 }
 
