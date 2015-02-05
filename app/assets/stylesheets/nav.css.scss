@@ -1,24 +1,55 @@
 //Font variables:
-$user_nav-font: 'Bree Serif', serif;
+$user_nav-font: 'Dekko', cursive;
+
+//Color variables:
+$blue-transparent: rgba(0, 20, 89, 0.79);
+
+//Border radius mixin:
+@mixin boder-radius ($radius:0 0 10px 10px){
+	-webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//Border color mixin:
+@mixin border ($properties:2px solid black){
+	border: $properties
+}
+
+.nav_section{
+	margin: 0 auto;
+	width: 99%;
+	height: 10px;
+}
 
 .user_nav{
+	@include boder-radius;
 	float: right;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	font-family: $user_nav-font;
-	background-color: blue;
-  a{
+	background-color: $blue-transparent;
+	padding: 0.6rem;
+	a{
   	text-decoration: none;
+		color: white;
+	}
+	span{
 		color: white;
 	}
 }
 
 .general_nav{
+	@include boder-radius;
 	float: left;
 	font-family: $user_nav-font;
 	font-size: 1.2rem;
-	background-color: blue;
+	background-color: $blue-transparent;
+	padding: 0.6rem;
 	a{
 		text-decoration: none;
+		color: white;
+	}
+	span{
 		color: white;
 	}
 }

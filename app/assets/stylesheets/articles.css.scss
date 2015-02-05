@@ -16,7 +16,7 @@ body{
 }
 
 .main_section{
-	padding: 1.2rem;
+	padding: 0 1.2rem;
 	width: 80%;
 	margin: 0 auto;
 	background-color: white;
@@ -45,11 +45,12 @@ body{
 }
 
 .underline{
-	border-bottom: 1px solid $turquoise;
+	border-bottom: 0.15rem solid $blue-transparent;
 }
 
 .title{
 	text-align: center;
+	margin-top: 4rem;
 }
 
 .article{

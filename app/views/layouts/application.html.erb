@@ -11,29 +11,37 @@
 </head>
 <body>
   <section class="main_section">
-    <%= notice %>
-    <nav class="user_nav">
-      <% if current_user %>
-        <%= link_to "Editar perfil", edit_user_path(:current) %>
-        <%= link_to "Logout", logout_path %>
-      <% else %>
-        <%= link_to "Regístrate", new_user_path %>
-        <%= link_to "Inicia sesión", login_path %>
-      <% end %>
-    </nav>
+    <section class="nav_section">
+      <%= notice %>
+      <nav class="user_nav">
+        <% if current_user %>
+          <%= link_to "Editar perfil", edit_user_path(:current) %>
+          <span>|</span>
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          <%= link_to "Regístrate", new_user_path %>
+          <span>|</span>
+          <%= link_to "Inicia sesión", login_path %>
+        <% end %>
+      </nav>
 
-    <nav class="general_nav">
-      <%= link_to 'Inicio', root_path %>
-      <%= link_to 'Contacto', contact_path %>
+      <nav class="general_nav">
+        <%= link_to 'Inicio', root_path %>
+        <span>|</span>
+        <%= link_to 'Contacto', contact_path %>
+      
+        <% if current_user && current_user.admin_flag == true%>
+          <span>|</span>
+          <%= link_to 'Usuarios', users_path %>
+          <span>|</span>
+          <%= link_to 'Nuevo artículo', new_article_path %>
+        <% end %>   
+      </nav>
+    </section>
     
-      <% if current_user && current_user.admin_flag == true%>
-        <%= link_to 'Usuarios', users_path %>
-        <%= link_to 'Nuevo artículo', new_article_path %>
-      <% end %>   
-    </nav>
-
     <%= yield %>
 
   </section>
+
 </body>
 </html>
