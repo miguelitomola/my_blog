@@ -57,6 +57,20 @@ body{
 	background-color: $green-transparent;
 	font-size: 1rem;
 	font-family: $article-font;
-	margin: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
+.articles_container{
+	width: 83%;
+	display: inline-block; 
+}
+
+.dates_aside{
+	font-family: $article-font;
+	font-size: 1rem;
+	background-color: lightblue;
+	display: inline-block; 
+	margin-left: 1rem;
+	width: 15%;
+}

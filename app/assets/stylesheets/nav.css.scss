@@ -3,23 +3,27 @@ $user_nav-font: 'Dekko', cursive;
 
 //Color variables:
 $blue-transparent: rgba(0, 20, 89, 0.79);
+$border-bookmark: rgba(189, 195, 239, 0.44);
+
+//Div sizes variables:
+$contact_b_height: 1.25rem;
 
 //Border radius mixin:
-@mixin boder-radius ($radius:0 0 10px 10px){
+@mixin boder-radius ($radius:0 0 1rem 1rem){
 	-webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
 
 //Border color mixin:
-@mixin border ($properties:2px solid black){
-	border: $properties
+@mixin border-bottom ($properties:0.125rem solid $border-bookmark){
+	border-bottom: $properties
 }
 
 .nav_section{
 	margin: 0 auto;
 	width: 99%;
-	height: 10px;
+	height: 2rem;
 }
 
 .user_nav{
@@ -28,28 +32,48 @@ $blue-transparent: rgba(0, 20, 89, 0.79);
 	font-size: 1.3rem;
 	font-family: $user_nav-font;
 	background-color: $blue-transparent;
-	padding: 0.6rem;
+	padding: 0.5rem;
 	a{
   	text-decoration: none;
 		color: white;
 	}
 	span{
-		color: white;
+		color: $border-bookmark;
 	}
 }
 
 .general_nav{
 	@include boder-radius;
-	float: left;
-	font-family: $user_nav-font;
-	font-size: 1.2rem;
-	background-color: $blue-transparent;
-	padding: 0.6rem;
-	a{
-		text-decoration: none;
-		color: white;
-	}
-	span{
-		color: white;
-	}
+  @extend .user_nav;
+  float: left;
 }
+
+.contact_button{
+	position: relative;
+	height: $contact_b_height;
+	color: white;
+	display: inline-block;
+	height: $contact_b_height;
+}
+
+.sub_nav{
+	@extend .general_nav;
+	float: none;
+	@include boder-radius(0 1rem 1rem 1rem);
+	position: absolute;
+	left: 0rem;
+	top: $contact_b_height;
+}
+
+.sub_nav_2{
+  padding: 0.2rem;
+}
+
+.bookmark{
+	@include border-bottom;
+}
+
+.display_none{
+	display: none;
+}
+

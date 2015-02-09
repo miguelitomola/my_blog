@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'contact' => 'staticpages#contact'
 
+  get 'about_me' => 'staticpages#about_me'
+
   resources :articles do
     resources :comments
   end

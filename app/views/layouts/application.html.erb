@@ -2,34 +2,49 @@
 <html>
 <head>
   <title>MyBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Dekko' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Original+Surfer' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, defer: :true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <section class="main_section">
     <section class="nav_section">
-      <%= notice %>
-      <nav class="user_nav">
-        <% if current_user %>
-          <%= link_to "Editar perfil", edit_user_path(:current) %>
+        <%= notice %>
+        <nav class="user_nav">
+          <% if current_user %>
+            <%= link_to "Editar perfil", edit_user_path(:current) %>
+            <span>|</span>
+            <%= link_to "Logout", logout_path %>
+          <% else %>
+            <%= link_to "Regístrate", new_user_path %>
+            <span>|</span>
+            <%= link_to "Inicia sesión", login_path %>
+          <% end %>
+        </nav>
+  
+        <nav class="general_nav">
+          <%= link_to 'Inicio', root_path %>
           <span>|</span>
-          <%= link_to "Logout", logout_path %>
-        <% else %>
-          <%= link_to "Regístrate", new_user_path %>
+          <%= link_to "About me", about_me_path %>
           <span>|</span>
-          <%= link_to "Inicia sesión", login_path %>
-        <% end %>
-      </nav>
-
-      <nav class="general_nav">
-        <%= link_to 'Inicio', root_path %>
-        <span>|</span>
-        <%= link_to 'Contacto', contact_path %>
-      
+  
+          <ul class="contact_button">
+            <li>Contacto</li>
+            <li class="sub_nav display_none">
+              <ul>
+                <li class="sub_nav_2 bookmark">
+                  <%= link_to '@miguelitomola', "https://twitter.com/miguelitomola" %>
+                </li>
+                <li class="sub_nav_2">
+                  <%= mail_to 'e-mail', "miganml@outlook.com" %>
+                </li>
+              </ul>  
+            </li>
+          </ul>
+  
         <% if current_user && current_user.admin_flag == true%>
           <span>|</span>
           <%= link_to 'Usuarios', users_path %>
@@ -38,10 +53,9 @@
         <% end %>   
       </nav>
     </section>
-    
+      
     <%= yield %>
 
   </section>
-
 </body>
 </html>
