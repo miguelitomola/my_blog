@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//Cursors:
+$default_cursor: url('default.cur'), auto;
+$link_cursor: url('link.cur'), auto;
+
 //Color variables:
 $turquoise: rgb(17, 89, 95);
 $green-transparent: rgba(55, 216, 55, 0.55);
@@ -13,6 +17,11 @@ $article-font: 'Original Surfer', cursive;
 
 body{
 	background-color: $blue-transparent;
+	cursor: $default_cursor;
+}
+
+a{
+	cursor: $link_cursor;
 }
 
 .main_section{
@@ -53,24 +62,30 @@ body{
 	margin-top: 4rem;
 }
 
-.article{
-	background-color: $green-transparent;
-	font-size: 1rem;
-	font-family: $article-font;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-
 .articles_container{
 	width: 83%;
-	display: inline-block; 
+	display: inline-block;
+}
+
+.article{
+	background-color: $green-transparent;
+	font-size: 1.2rem;
+	font-family: $header-font;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	box-sizing: border-box;
+	padding: 0.3rem; 
 }
 
 .dates_aside{
-	font-family: $article-font;
-	font-size: 1rem;
+	font-family: $header-font;
+	font-size: 1.3rem;
 	background-color: lightblue;
 	display: inline-block; 
-	margin-left: 1rem;
-	width: 15%;
+  float: right;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  width: 15%;
+  height: 25rem;
+  padding: 0.4rem;
 }

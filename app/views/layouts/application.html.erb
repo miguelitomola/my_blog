@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyBlog</title>
+  <title>.:código web:.</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', defer:"defer", 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Dekko' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Original+Surfer' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, defer: :true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -32,7 +32,7 @@
           <span>|</span>
   
           <ul class="contact_button">
-            <li>Contacto</li>
+            <li class="contact_button_li">Contacto</li>
             <li class="sub_nav display_none">
               <ul>
                 <li class="sub_nav_2 bookmark">

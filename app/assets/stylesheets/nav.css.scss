@@ -1,3 +1,6 @@
+//Cursors:
+$default_cursor: url('default.cur'), auto;
+
 //Font variables:
 $user_nav-font: 'Dekko', cursive;
 
@@ -55,6 +58,11 @@ $contact_b_height: 1.25rem;
 	display: inline-block;
 	height: $contact_b_height;
 }
+
+.contact_button_li{
+	cursor: $default_cursor;
+}
+
 
 .sub_nav{
 	@extend .general_nav;
