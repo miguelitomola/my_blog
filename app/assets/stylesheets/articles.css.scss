@@ -49,8 +49,18 @@ a{
   }
 }
 
+.h3{
+  	font-size: 1.2rem;
+	  color: #6F742D;
+	  font-family: $header-font;
+}
+
 .inline{
 	display: inline;
+}
+
+.inline_block{
+	display: inline-block;
 }
 
 .underline{

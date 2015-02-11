@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 	before_action :require_admin, only: [:new, :edit, :create, :update, :destroy]
 
 	def index
-  	@articles = Article.all
+  	@articles = Article.order(created_at: :desc).limit(5)
   end
 
   def show

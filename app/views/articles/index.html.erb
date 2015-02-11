@@ -1,17 +1,26 @@
 <p class="title underline">
-  <span class="h1">código web</span>
-  <span class="h2"><%= link_to "by miguelitomola", contact_path %></span>
+  <h1 class="h1 inline_block">código web</h1>
+  <h2 class="h2 inline_block"><%= link_to "by miguelitomola", contact_path %></h2>
 </p>
 
 <section class="articles_container">
   <% @articles.each do |article| %>
     <article class="article">
       
-      <h2 class="h2">
+      <h2 class="h2 inline_block">
         <%= link_to "#{article.title}", article_path(article) %>
       </h2>
+      <h3 class="h3 inline_block">
+        <% datetime = article.created_at %>
+        <%= "publicado el #{datetime.day} / #{datetime.month} / #{datetime.year}" %>
+      </h3>
       <p>
-        <%= article.body %>
+        <% if article.body.length < 350 %>
+          <%= article.body %>
+        <% else %>
+          <%= article.body[0,350] %>
+          <%= link_to '[...]', article_path(article) %>
+        <% end %>
       </p>
     
     </article> 
