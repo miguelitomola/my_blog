@@ -8,12 +8,19 @@ $link_cursor: url('link.cur'), auto;
 
 //Color variables:
 $turquoise: rgb(17, 89, 95);
-$green-transparent: rgba(55, 216, 55, 0.55);
+$beige-transparent: rgba(142, 177, 139, 0.56);
 $blue-transparent: rgba(0, 20, 89, 0.79);
 
 //Font variables:
 $header-font: 'Dekko', cursive;
 $article-font: 'Original Surfer', cursive;
+
+//Border radius mixin:
+@mixin boder-radius ($radius:0 0 1rem 1rem){
+	-webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
 
 body{
 	background-color: $blue-transparent;
@@ -36,7 +43,6 @@ a{
 	font-size: 3rem;
 	font-family: $header-font;
 	color: $turquoise;
-	padding-top: 4rem;
 }
 
 .h2{
@@ -51,7 +57,6 @@ a{
 
 .h3{
   	font-size: 1.2rem;
-	  color: #6F742D;
 	  font-family: $header-font;
 }
 
@@ -59,17 +64,17 @@ a{
 	display: inline;
 }
 
-.inline_block{
-	display: inline-block;
-}
-
 .underline{
 	border-bottom: 0.15rem solid $blue-transparent;
 }
 
-.title{
+.title_container{
 	text-align: center;
-	margin-top: 4rem;
+	margin-top: 3rem;
+}
+
+.main_header{
+  display: inline-block;
 }
 
 .articles_container{
@@ -77,14 +82,20 @@ a{
 	display: inline-block;
 }
 
+.art_title{
+	margin-right: 0.4rem;
+	display: inline-block;
+}
+
 .article{
-	background-color: $green-transparent;
+	@include boder-radius(0 1rem);
+	background-color: $beige-transparent;
 	font-size: 1.2rem;
 	font-family: $header-font;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	box-sizing: border-box;
-	padding: 0.3rem; 
+	padding: 1rem; 
 }
 
 .dates_aside{
@@ -96,6 +107,11 @@ a{
   box-sizing: border-box;
   margin-top: 1rem;
   width: 15%;
-  height: 25rem;
+  min-height: 25rem;
   padding: 0.4rem;
+}
+
+.date{
+	display: inline-block;
+	color: rgb(107, 13, 13);
 }

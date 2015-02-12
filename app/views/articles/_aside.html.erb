@@ -1,12 +1,14 @@
 <aside class="dates_aside">
   <ul>
-    <li>
-      2015
-      <ul>
-        <li>Enero</li>
-        <li>Febrero</li>
-        <li>Marzo</li>
-      </ul>
-    </li>
+    <% @years.each do |year|%>
+      <li>
+        <%= year %>
+        <ul>
+          <% for month in @months %>
+            <li><%= month %></li>            
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
   </ul>
 </aside>

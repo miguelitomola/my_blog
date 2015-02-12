@@ -1,18 +1,30 @@
-<p class="title underline">
-  <h1 class="h1 inline_block">código web</h1>
-  <h2 class="h2 inline_block"><%= link_to "by miguelitomola", contact_path %></h2>
-</p>
+<div class="title_container underline">
+  <h1 class="h1 main_header">código web</h1>
+  <h2 class="h2 main_header"><%= link_to "by miguelitomola", contact_path %></h2>
+</div>
 
 <section class="articles_container">
   <% @articles.each do |article| %>
     <article class="article">
       
-      <h2 class="h2 inline_block">
+      <h2 class="h2 art_title">
         <%= link_to "#{article.title}", article_path(article) %>
       </h2>
-      <h3 class="h3 inline_block">
+      <h3 class="h3 date">
         <% datetime = article.created_at %>
-        <%= "publicado el #{datetime.day} / #{datetime.month} / #{datetime.year}" %>
+        <% month = datetime.month %>
+          <% month == 1? month = "Enero": %>
+          <% month == 2? month = "Febrero": %>
+          <% month == 3? month = "Marzo": %>
+          <% month == 4? month = "Abril": %>
+          <% month == 5? month = "Mayo": %>
+          <% month == 6? month = "Junio": %>
+          <% month == 7? month = "Julio": %>
+          <% month == 8? month = "Agosto": %>
+          <% month == 9? month = "Septiembre": %>
+          <% month == 10? month = "Octubre": %>
+          <% month == 11? month = "Noviembre": month = "Diciembre" %>
+        <%= "#{datetime.day} de #{month} de #{datetime.year}" %>
       </h3>
       <p>
         <% if article.body.length < 350 %>
