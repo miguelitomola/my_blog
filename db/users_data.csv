@@ -1,0 +1,2 @@
+id,username,email,crypted_password,password_salt,persistence_token,admin_flag,created_at,updated_at
+1,miguelitomola,miganml@outlook.com,400$8$1d$dbf04f2098708631$522746af42256e32696cf0da9259ab4cbb4227ec01cae7fdd3da7ad3d9d2d337,vzqhSb7N7cIpFquWL1P,05a02ee1f0adc123f67ac30d9fc45cc11fa33b07ef5d89f1aa14a147b5de90a9194901d6e5f91e5b35721e6e00fc7f03ac5b24216b2e6df3d36c6f38a672502d,t,"2015-02-14 17:56:51.776123","2015-02-14 18:02:09.803943"
