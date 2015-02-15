@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20150114120930) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "article_number"
+    t.string   "month"
+    t.string   "year"
   end
 
   create_table "comments", force: true do |t|
