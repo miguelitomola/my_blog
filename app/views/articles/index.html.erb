@@ -12,19 +12,7 @@
       </h2>
       <h3 class="h3 date">
         <% datetime = article.created_at %>
-        <% month = datetime.month %>
-          <% month == 1? month = "Enero": %>
-          <% month == 2? month = "Febrero": %>
-          <% month == 3? month = "Marzo": %>
-          <% month == 4? month = "Abril": %>
-          <% month == 5? month = "Mayo": %>
-          <% month == 6? month = "Junio": %>
-          <% month == 7? month = "Julio": %>
-          <% month == 8? month = "Agosto": %>
-          <% month == 9? month = "Septiembre": %>
-          <% month == 10? month = "Octubre": %>
-          <% month == 11? month = "Noviembre": month = "Diciembre" %>
-        <%= "#{datetime.day} de #{month} de #{datetime.year}" %>
+        <%= "#{datetime.day} de #{datetime.strftime('%B')} de #{datetime.year}" %>
       </h3>
       <p>
         <% if article.body.length < 350 %>
