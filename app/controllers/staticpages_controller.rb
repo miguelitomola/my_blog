@@ -3,7 +3,7 @@ class StaticpagesController < ApplicationController
   def welcome
   end
   
-  def contact
+  def about_me
   end
   
 end

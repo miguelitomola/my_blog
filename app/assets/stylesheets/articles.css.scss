@@ -40,24 +40,18 @@ a{
 }
 
 .h1{
-	font-size: 3rem;
+	font-size: 3.5rem;
 	font-family: $header-font;
-	color: $turquoise;
 }
 
 .h2{
 	font-size: 2rem;
-	color: blue;
 	font-family: $header-font;
-	a{
-		text-decoration: none;
-		color: $blue-transparent;
-  }
 }
 
 .h3{
-  	font-size: 1.2rem;
-	  font-family: $header-font;
+  font-size: 1.2rem;
+	font-family: $header-font;
 }
 
 .inline{
@@ -68,13 +62,34 @@ a{
 	border-bottom: 0.15rem solid $blue-transparent;
 }
 
-.title_container{
+.main_title_container{
+	@include boder-radius(1rem);
+	background-color: $blue-transparent;
 	text-align: center;
 	margin-top: 3rem;
+	padding: 1rem;
 }
 
-.main_header{
+.main_title{
   display: inline-block;
+	color: white;
+}
+
+.title{
+	display: inline-block;
+	color: white;
+	a{
+		text-decoration: none;
+		color: white;
+  }
+}
+
+.subtitle_container{
+	text-align: center;
+}
+
+.subtitle{
+	color: $turquoise;
 }
 
 .articles_container{

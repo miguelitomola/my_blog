@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root 'articles#index'
 
-  get 'contact' => 'staticpages#contact'
-
   get 'about_me' => 'staticpages#about_me'
 
   resources :articles do
