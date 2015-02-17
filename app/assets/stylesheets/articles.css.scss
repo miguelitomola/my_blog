@@ -10,13 +10,15 @@ $link_cursor: url('link.cur'), auto;
 $turquoise: rgb(17, 89, 95);
 $beige-transparent: rgba(142, 177, 139, 0.56);
 $blue-transparent: rgba(0, 20, 89, 0.79);
+$blue-celeste: #8FB9D4;
+$blue-dark: #2F2F5A;
 
 //Font variables:
 $header-font: 'Dekko', cursive;
 $article-font: 'Original Surfer', cursive;
 
 //Border radius mixin:
-@mixin boder-radius ($radius:0 0 1rem 1rem){
+@mixin border-radius ($radius:0 0 1rem 1rem){
 	-webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
@@ -62,34 +64,47 @@ a{
 	border-bottom: 0.15rem solid $blue-transparent;
 }
 
-.main_title_container{
-	@include boder-radius(1rem);
+.titles_container{
+	@include border-radius(1rem);
+	width: 100%;
 	background-color: $blue-transparent;
+	box-sizing: border-box;
+	margin: 4rem 0 4rem;
+	border: 0.2rem solid rgb(54, 69, 124);
+}
+
+.main_title_container{
+	@include border-radius(1rem 2rem 0 1rem);
+	background-color: $blue-celeste;
 	text-align: center;
-	margin-top: 3rem;
 	padding: 1rem;
+	display: inline-block;
+	width: 60%;
+	box-sizing: border-box;
 }
 
 .main_title{
   display: inline-block;
-	color: white;
+	color: $blue-dark;
 }
 
 .title{
 	display: inline-block;
-	color: white;
+	color: $blue-dark;
 	a{
 		text-decoration: none;
-		color: white;
+		color: $blue-dark;
   }
 }
 
 .subtitle_container{
 	text-align: center;
+	display: inline-block;
+	width: 35%;
 }
 
 .subtitle{
-	color: $turquoise;
+	color: white;
 }
 
 .articles_container{
@@ -103,7 +118,7 @@ a{
 }
 
 .article{
-	@include boder-radius(0 1rem);
+	@include border-radius(0 1rem);
 	background-color: $beige-transparent;
 	font-size: 1.2rem;
 	font-family: $header-font;

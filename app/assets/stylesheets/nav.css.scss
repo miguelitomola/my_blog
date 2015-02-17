@@ -12,7 +12,7 @@ $border-bookmark: rgba(189, 195, 239, 0.44);
 $contact_b_height: 1.25rem;
 
 //Border radius mixin:
-@mixin boder-radius ($radius:0 0 1rem 1rem){
+@mixin border-radius ($radius:0 0 1rem 1rem){
 	-webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
@@ -27,10 +27,11 @@ $contact_b_height: 1.25rem;
 	margin: 0 auto;
 	width: 99%;
 	height: 2rem;
+	margin-bottom: 0.5rem;
 }
 
 .user_nav{
-	@include boder-radius;
+	@include border-radius;
 	float: right;
 	font-size: 1.3rem;
 	font-family: $user_nav-font;
@@ -46,7 +47,7 @@ $contact_b_height: 1.25rem;
 }
 
 .general_nav{
-	@include boder-radius;
+	@include border-radius;
   @extend .user_nav;
   float: left;
 }
@@ -67,10 +68,11 @@ $contact_b_height: 1.25rem;
 .sub_nav{
 	@extend .general_nav;
 	float: none;
-	@include boder-radius(0 1rem 1rem 1rem);
+	@include border-radius(0 1rem 1rem 1rem);
 	position: absolute;
 	left: 0rem;
 	top: $contact_b_height;
+	background-color: rgb(54, 69, 124);
 }
 
 .sub_nav_2{
