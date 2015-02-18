@@ -1,11 +1,15 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
     <%= f.label "Autor" %>
+  </p>
+  <p>
     <%= f.text_field :commenter %>
   </p>
   <p>
     <%= f.label "Comentario" %>
-    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.text_area :body, class:"write_comment_field" %>
   </p>
   <p>
     <%= f.submit %>

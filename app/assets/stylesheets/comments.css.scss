@@ -1,3 +1,25 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Font variables:
+$header-font: 'Dekko', cursive;
+$article-font: 'Original Surfer', cursive;
+
+//Color variables:
+$write-comments-background: rgba(142, 170, 239, 0.76);	
+
+.comments{
+	width: 100%;
+	background-color: $write-comments-background;  
+	box-sizing: border-box;
+	padding: 1rem;
+	text-align: center;
+	margin: 0 auto;
+	font-family: $header-font;
+}
+
+.write_comment_field{
+	width: 50%;
+	height: 60px;
+}

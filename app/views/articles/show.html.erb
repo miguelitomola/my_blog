@@ -1,31 +1,27 @@
-<section class="titles_container">
-  <div class="main_title_container">
-    <h1 class="h1 main_title">código web</h1>
-    <h2 class="h2 title"><%= link_to "by miguelitomola", about_me_path %></h2>
-  </div>
-  <div class="subtitle_container">
-    <h2 class="h2 subtitle"><%= @article.title %></h2>
-  </div>
-</section>
-
-<section class="title underline">
-  <span>
-    <%= link_to 'Editar', edit_article_path(@article) %> ||
-  </span>
-  <span>
-    <%= link_to 'Eliminar', article_path(@article),
-        method: :delete,
-        data: { confirm: "¿Seguro que quieres eliminar #{@article.title}?" } %> -
-  </span>
-</section>
+<% @page_name = @article.title %>
  
-<p class="article">
+<section class="article">
   <%= @article.body %>
-</p>
+  <section class="tools">
+    <span>
+      <<%= link_to 'Editar', edit_article_path(@article) %> ||
+    </span>
+    <span>
+      <%= link_to 'Eliminar', article_path(@article),
+          method: :delete,
+          data: { confirm: "¿Seguro que quieres eliminar #{@article.title}?" } %>>
+    </span>
+  </section>
+</section>
 
-<h2>Comentarios</h2>
-<%= render @article.comments %>
-
-<h2>Añade un comentario:</h2>
-<%= render 'comments/form' %>
+<section class="comments">
+  <div>
+    <h2 class="h2">Comentarios</h2>
+    <%= render @article.comments %>
+  </div class="a">
+  <div>
+    <h2 class="h3">Añade un comentario:</h2>
+    <%= render 'comments/form' %>
+  </div>
+</section>
 

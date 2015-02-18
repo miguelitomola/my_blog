@@ -52,7 +52,7 @@ a{
 }
 
 .h3{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 	font-family: $header-font;
 }
 
@@ -66,11 +66,13 @@ a{
 
 .titles_container{
 	@include border-radius(1rem);
-	width: 100%;
+	width: 83%;
 	background-color: $blue-transparent;
 	box-sizing: border-box;
-	margin: 4rem 0 4rem;
-	border: 0.2rem solid rgb(54, 69, 124);
+	margin: 0 auto;
+	margin-top: 4rem;
+	margin-bottom: 2.5rem;
+	border: 0.1rem solid rgb(54, 69, 124);
 }
 
 .main_title_container{
@@ -90,11 +92,23 @@ a{
 
 .title{
 	display: inline-block;
-	color: $blue-dark;
-	a{
+  	a:visited, a:link{
+		  text-decoration: none;
+		  color: $blue-dark;
+		}
+}
+
+.tools{
+	font-family: $header-font;
+	font-size: 1.1rem;
+	display: block;
+	margin: 0 auto;
+	margin-top: 0.8rem;
+	width: 130px;
+	a:visited, a:link{
 		text-decoration: none;
 		color: $blue-dark;
-  }
+  }	
 }
 
 .subtitle_container{
