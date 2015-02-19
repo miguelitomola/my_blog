@@ -1,10 +1,12 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
+  
   <p>
     <%= f.label "Autor" %>
   </p>
   <p>
-    <%= f.text_field :commenter %>
+    <%= f.text_field :commenter, value:@username %>
   </p>
+
   <p>
     <%= f.label "Comentario" %>
   </p>
@@ -14,4 +16,5 @@
   <p>
     <%= f.submit %>
   </p>
+
 <% end %>

@@ -10,6 +10,9 @@ class ArticlesController < ApplicationController
 
   def show
   	@article = Article.find(params[:id])
+    if UserSession.find != nil 
+      @username = UserSession.find.user.username
+    end
   end
 	
 	def new

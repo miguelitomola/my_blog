@@ -16,11 +16,13 @@
 
 <section class="comments">
   <div>
-    <h2 class="h2">Comentarios</h2>
+    <% if @article.comments defined? %>
+     <h3 class="h3">Comentarios</h2>
     <%= render @article.comments %>
+  <% end %>
   </div class="a">
   <div>
-    <h2 class="h3">Añade un comentario:</h2>
+    <h3 class="h3">Añade un comentario:</h2>
     <%= render 'comments/form' %>
   </div>
 </section>
