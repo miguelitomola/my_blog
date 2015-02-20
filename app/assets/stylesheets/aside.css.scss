@@ -1,0 +1,23 @@
+//Font variables:
+$header-font: 'Dekko', cursive;
+
+
+.dates_aside{
+	font-family: $header-font;
+	font-size: 1.3rem;
+	background-color: lightblue;
+	display: inline-block; 
+  float: left;
+  box-sizing: border-box;
+  width: 17%;
+  min-height: 25rem;
+  padding: 0.4rem;
+  margin-left: 0.5rem;
+}
+
+.image_aside{
+  @extend .dates_aside;
+  float: right;
+  margin-right: 0.5rem;
+  background-image: url(keyboard.png);
+}

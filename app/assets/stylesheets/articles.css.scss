@@ -34,11 +34,11 @@ a{
 }
 
 .main_section{
-	padding: 0 1.2rem;
 	width: 80%;
 	margin: 0 auto;
 	background-color: white;
 	min-height: 40rem;
+	padding: 0 1rem 1rem 1rem;
 }
 
 .h1{
@@ -70,8 +70,8 @@ a{
 	background-color: $blue-transparent;
 	box-sizing: border-box;
 	margin: 0 auto;
-	margin-top: 4rem;
-	margin-bottom: 2.5rem;
+	margin-top: 3.5rem;
+	margin-bottom: 4rem;
 	border: 0.1rem solid rgb(54, 69, 124);
 }
 
@@ -122,8 +122,8 @@ a{
 }
 
 .articles_container{
-	width: 83%;
-	display: inline-block;
+	width: 60%;
+	margin: 0 auto;
 }
 
 .art_title{
@@ -136,23 +136,10 @@ a{
 	background-color: $beige-transparent;
 	font-size: 1.2rem;
 	font-family: $header-font;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	display: block;
+	margin: 1rem 0 1rem 0;
 	box-sizing: border-box;
 	padding: 1rem; 
-}
-
-.dates_aside{
-	font-family: $header-font;
-	font-size: 1.3rem;
-	background-color: lightblue;
-	display: inline-block; 
-  float: right;
-  box-sizing: border-box;
-  margin-top: 1rem;
-  width: 15%;
-  min-height: 25rem;
-  padding: 0.4rem;
 }
 
 .date{
