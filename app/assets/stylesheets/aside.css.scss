@@ -13,15 +13,5 @@ $header-font: 'Dekko', cursive;
   min-height: 25rem;
   padding: 0.4rem;
   margin-left: 0.5rem;
-}
-
-.image_aside{
-  @extend .dates_aside;
-  float: right;
-  margin-right: 0.5rem;
-  //background-image: url(keyboard.png);
-}
-
-.image_in_aside{
-  margin-bottom: 3rem;
+  margin-right: 1rem;
 }

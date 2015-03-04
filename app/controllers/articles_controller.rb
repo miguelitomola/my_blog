@@ -5,7 +5,8 @@ class ArticlesController < ApplicationController
 	before_action :set_article_months
 
 	def index
-  	@articles = Article.order(created_at: :desc).limit(5)
+  	@articles_1 = Article.order(created_at: :desc).limit(3)
+    @articles_2 = Article.order(created_at: :desc).limit(3)
   end
 
   def show

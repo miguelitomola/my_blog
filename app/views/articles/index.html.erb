@@ -1,7 +1,31 @@
 <% @page_name = "Bienvenid@" %>
 
-<section class="articles_container">
-    <% @articles.each do |article| %>
+<section class="articles_cocontiner">
+<div class="articles_container_1">
+    <% @articles_1.each do |article| %>
+      <article class="article">
+        
+        <h2 class="h2 art_title">
+          <%= link_to "#{article.title}", article_path(article) %>
+        </h2>
+        <h3 class="h3 date">
+          <% datetime = article.created_at %>
+          <%= "#{datetime.day} de #{datetime.strftime('%B')} de #{datetime.year}" %>
+        </h3>
+        <p>
+          <% if article.body.length < 350 %>
+            <%= article.body %>
+          <% else %>
+            <%= article.body[0,350] %>
+            <%= link_to '[...]', article_path(article) %>
+          <% end %>
+        </p>
+      
+      </article> 
+    <% end %>
+</div>
+<div class="articles_container_2">
+    <% @articles_2.each do |article| %>
       <article class="article">
         
         <h2 class="h2 art_title">
