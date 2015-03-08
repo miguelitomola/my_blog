@@ -1,3 +1,7 @@
+//Cursors:
+$default_cursor: url('default.cur'), auto;
+$link_cursor: url('link.cur'), auto;
+
 //Font variables:
 $header-font: 'Dekko', cursive;
 
@@ -14,4 +18,16 @@ $header-font: 'Dekko', cursive;
   padding: 0.4rem;
   margin-left: 0.5rem;
   margin-right: 1rem;
+}
+
+.month_lists{
+  display:none;
+}
+
+.year_sections{
+}
+
+.year{
+  cursor: $link_cursor;
+  display: inline-block;
 }
