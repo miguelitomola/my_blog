@@ -5,8 +5,9 @@ class ArticlesController < ApplicationController
 	before_action :set_article_months
 
 	def index
-  	@articles_1 = Article.order(created_at: :desc).limit(3)
-    @articles_2 = Article.order(created_at: :desc).limit(3)
+    last_id = Article.last.id	
+    @articles_1 = [Article.last, Article.find_by(id:last_id-2), Article.find_by(id:last_id-4)]
+    @articles_2 = [Article.find_by(id:last_id-1), Article.find_by(id:last_id-3), Article.find_by(id:last_id-5)]
   end
 
   def show
