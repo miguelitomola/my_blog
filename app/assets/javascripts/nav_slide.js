@@ -1,4 +1,5 @@
-/* On general nav bar, contact button must slide a sub menu */
+// On general nav bar, contact button must slide a sub menu 
+
 
 var contactBtn = document.getElementsByClassName("contact_button")[0];
 var subMenu = document.getElementsByClassName("sub_nav")[0];
