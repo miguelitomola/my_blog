@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration
     	t.string :title
     	t.text :body
     	# this line adds an integer column called `articles_date_id`
-    	t.references :article_dates, index: true
+    	t.references :articles_date, index: true
       t.timestamps
     end
   end

@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20150305225011) do
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "article_dates_id"
+    t.integer  "articles_date_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "articles", ["article_dates_id"], name: "index_articles_on_article_dates_id"
+  add_index "articles", ["articles_date_id"], name: "index_articles_on_articles_date_id"
 
   create_table "articles_dates", force: true do |t|
     t.integer  "day"

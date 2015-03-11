@@ -2,6 +2,7 @@
 
 <section class="articles_cocontiner">
 <div class="articles_container_1">
+  <%if Article.all.length > 0 %>
     <% @articles_1.each do |article| %>
       <article class="article">
         
@@ -23,9 +24,9 @@
       
       </article> 
     <% end %>
-</div>
-<div class="articles_container_2">
-    <% @articles_2.each do |article| %>
+    </div>
+    <div class="articles_container_2">
+    <% @articles_1.each do |article| %>
       <article class="article">
         
         <h2 class="h2 art_title">
@@ -46,5 +47,6 @@
       
       </article> 
     <% end %>
+  <% end %>
 </section>
 

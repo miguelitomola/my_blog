@@ -5,9 +5,10 @@ class ArticlesController < ApplicationController
 	# before_action :set_article_months
 
 	def index
-    last_id = Article.last.id	
-    @articles_1 = [Article.last, Article.find_by(id:last_id-2), Article.find_by(id:last_id-4)]
-    @articles_2 = [Article.find_by(id:last_id-1), Article.find_by(id:last_id-3), Article.find_by(id:last_id-5)]
+    if Article.all.length > 0
+      last_id = Article.last.id	
+      @articles_1 = [Article.last]
+    end
   end
 
   def show
@@ -29,8 +30,7 @@ class ArticlesController < ApplicationController
 		@article = Article.new(article_params)
 
 		if @article.save
-      #article_date = @article.updated.updated_at
-      #article_date.updated_at
+      ArticlesDate.set_dates @article
 		  redirect_to @article
 		else
 			render 'new'
