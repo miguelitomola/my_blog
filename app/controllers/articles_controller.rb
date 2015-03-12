@@ -5,9 +5,13 @@ class ArticlesController < ApplicationController
 	# before_action :set_article_months
 
 	def index
-    if Article.all.length > 0
-      last_id = Article.last.id	
-      @articles_1 = [Article.last]
+    if Article.last != nil 
+      six_articles = Article.order(created_at: :desc).limit(6)
+      @articles_1 = [six_articles[0], six_articles[2], six_articles[4]]
+      @articles_2 = [six_articles[1], six_articles[3], six_articles[6]]
+    else
+      @articles_1 = []
+      @articles_2 = []
     end
   end
 
