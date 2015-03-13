@@ -13,6 +13,6 @@ for (var i=0; i<years.length; i++) {
     }else{
     month_list.classList.add('hide_months');
     };
-	};
+  };
 };
 

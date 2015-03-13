@@ -21,10 +21,17 @@ $header-font: 'Dekko', cursive;
 }
 
 .hide_months{
-  display:none;
+  display: none;
 }
 
-.year_sections{
+.months{
+  li{
+    text-indent: 10px;
+    line-height: 120%;
+  }
+}
+
+.year_element{
 }
 
 .year{
