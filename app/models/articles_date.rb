@@ -32,5 +32,29 @@ class ArticlesDate < ActiveRecord::Base
     end
   end
 
+  def self.print_dates
+    dates_aside = {}
+    dates = ArticlesDate.all
+    #If there are not dates, dates aside remains empty. Otherwise, loop over every date.
+    dates.length < 1 ? dates_aside : dates.each do |date|
+      #First, I keep years in a aside_years if it does not keep them yet
+      aside_year = date.year
+      if dates_aside.include?(aside_year) == false
+        #As the year is not in dates_aside variable, I keep it as key and its value is
+        #a empty array wich will keep the months.
+        dates_aside[aside_year] = []
+      end
+      #I iterate all the dates of aside_year and keep them in dates_by_year
+      dates_by_year = ArticlesDate.where(year: aside_year)
+      #Then I iterate those years to keep the months in dates aside if they don't exist.
+      dates_by_year.each do |date_y|
+        aside_month = date_y.month
+        if dates_aside[aside_year].include?(aside_month) == false
+          dates_aside[aside_year].push(aside_month)
+        end
+      end
+    end
+    return dates_aside
+  end
 end
 

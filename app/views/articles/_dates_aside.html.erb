@@ -1,19 +1,14 @@
 <aside class="dates_aside">
-  <div class="year_element">
-    <h3 class="year">2015</h3>
-    <ul class="hide_months months">
-      <li>Enero</li>
-      <li>Febrero</li>
-      <li>Marzo</li>
-      <li>Abril</li>
-      <li>Mayo</li>
-      <li>Junio</li>
-      <li>Julio</li>
-      <li>Agosto</li>
-      <li>Septiembre</li>
-      <li>Octubre</li>
-      <li>Noviembre</li>
-      <li>Diciembre</li>
-    </ul>
-  </div>
+
+    <% @dates_aside == {} ? year = "" && months = [] : @dates_aside.sort_by{|year, month| year}.each do |year, months| %>
+      <div class="year_element">
+        <h3 class="year"><%= year %></h3>
+        <ul class="hide_months months">
+        <% months == [] ? month = "" : months.sort.each do |month| %>
+          <li><%= month %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %> 
+
 </aside>

@@ -9,37 +9,12 @@
           <h2 class="h2 art_title">
             <%= link_to "#{article.title}", article_path(article) %>
           </h2>
-          <h3 class="h3 date">
-            <% art_date = article.articles_date %>
-            <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
-          </h3>
-          <p>
-            <% if article.body.length < 350 %>
-              <%= article.body %>
-            <% else %>
-              <%= article.body[0,350] %>
-              <%= link_to '[...]', article_path(article) %>
-            <% end %>
-          </p>
-      
-        </article>
-      <% end%> 
-    <% end %>
-  <% end %>
-</div>
-  <div class="articles_container_2">
-  <% if @articles_2.any? %>
-    <% @articles_2.each do |article| %>
-      <% if article != nil %>
-        <article class="article">
-        
-          <h2 class="h2 art_title">
-            <%= link_to "#{article.title}", article_path(article) %>
-          </h2>
-          <h3 class="h3 date">
-            <% art_date = article.articles_date %>
-            <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
-          </h3>
+          <% if article.articles_date != nil %>
+            <h3 class="h3 date">
+              <% art_date = article.articles_date %>
+              <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
+            </h3>
+          <% end %>
           <p>
             <% if article.body.length < 350 %>
               <%= article.body %>
@@ -53,5 +28,35 @@
       <% end %> 
     <% end %>
   <% end %>
+  </div>
+  <div class="articles_container_2">
+  <% if @articles_2.any? %>
+    <% @articles_2.each do |article| %>
+        <% if article != nil %>
+        <article class="article">
+          
+          <h2 class="h2 art_title">
+            <%= link_to "#{article.title}", article_path(article) %>
+          </h2>
+          <% if article.articles_date != nil %>
+            <h3 class="h3 date">
+              <% art_date = article.articles_date %>
+              <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
+            </h3>
+          <% end %>
+          <p>
+            <% if article.body.length < 350 %>
+              <%= article.body %>
+            <% else %>
+              <%= article.body[0,350] %>
+              <%= link_to '[...]', article_path(article) %>
+            <% end %>
+          </p>
+      
+        </article>
+      <% end %> 
+    <% end %>
+  <% end %>
+  </div>
 </section>
 

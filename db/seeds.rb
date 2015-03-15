@@ -13,15 +13,17 @@ def create_articles number
     while art_number < number
       art_number = art_number + 1
       title = "#{tit_array[0]} #{art_number}"
-      Article.create(
+      art = Article.create(
         title: title
         )
+      ArticlesDate.set_dates art
     end
   else 
-    Article.create(
+    art = Article.create(
       title: 'Artículo 1'
       )
-    create_articles $articles_number
+    ArticlesDate.set_dates art
+    create_articles @@articles_number
   end
 end
 
@@ -38,8 +40,8 @@ def add_body_to_articles
   end
 end
 
-$articles_number = 6
-create_articles $articles_number
+@@articles_number = 4
+create_articles @@articles_number
 add_body_to_articles
 
                
