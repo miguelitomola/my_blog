@@ -56,6 +56,11 @@ class ArticlesController < ApplicationController
 
 		redirect_to articles_path
 	end
+  
+  #Here the page with the articles ordered by date
+  def show_results
+    render 'results'
+  end
 
   private
     def article_params
