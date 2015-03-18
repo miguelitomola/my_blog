@@ -58,7 +58,13 @@ class ArticlesController < ApplicationController
 	end
   
   #Here the page with the articles ordered by date
-  def show_results
+  def month_results
+    #to retrieve the parameters from the url
+    url = URI.parse()
+    query = CGI.parse(url.query)
+    month_year = query["query"][0].split
+    @month = month_year[0]
+    @year = month_year[1].to_i
     render 'results'
   end
 

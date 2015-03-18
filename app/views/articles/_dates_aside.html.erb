@@ -4,8 +4,11 @@
       <div class="year_element">
         <h3 class="year"><%= year %></h3>
         <ul class="hide_months months">
+
+        <!-- to pass the month into a query in the url -->
+        
         <% months == [] ? month = "" : months.sort.each do |month| %>
-          <li><%= link_to month, controller: "articles", query: month %></li>
+          <li><%= link_to month, controller: "articles", action: "index", query: "#{month} #{year}" %></li>
         <% end %>
         </ul>
       </div>
@@ -13,15 +16,3 @@
 
 </aside>
 
-
-<!-- to pass the month into a query in the url -->
-
-<!-- link_to "Ruby on Rails search", controller: "searches", query: "ruby on rails"
-# => <a href="/searches?query=ruby+on+rails">Ruby on Rails search</a> -->
-
-<!-- to retrieve the parameters from the url -->
-
-<!-- u = URI.parse('http://www.foo.com?id=4&empid=6')
-p = CGI.parse(u.query)
-# p is now {"id"=>["4"], "empid"=>["6"]}
-id = p['id'].first -->

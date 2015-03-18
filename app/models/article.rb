@@ -4,3 +4,6 @@ class Article < ActiveRecord::Base
 	validates :title, presence: true,
 	                  length: { minimum: 5 }
 end
+
+def search_by_month (year, month)
+	Article.where(year).where(month)
