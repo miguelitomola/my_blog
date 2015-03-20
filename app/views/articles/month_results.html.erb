@@ -1,5 +1,31 @@
-<% @articles_by_month.sort{ |x,y| y <=> x }.each do |article|%>
-  <p><%= article.title %></p>
-  <p><%= "#{article.articles_date.day} de #{article.articles_date.month} de #{article.articles_date.year}" %></p>
-  <p><%= article.body %></p>
+<% @page_name = "#{@month} de #{@year}" %>
+<% if @articles_by_month.any? %>
+  <% @articles_by_month.sort{ |x,y| y <=> x }.each do |article|%>
+    <article class="article">
+          
+          <h2 class="h2 art_title">
+            <%= link_to "#{article.title}", article_path(article) %>
+          </h2>
+          <% if article.articles_date != nil %>
+            <h3 class="h3 date">
+              <% art_date = article.articles_date %>
+              <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
+            </h3>
+          <% end %>
+          <p>
+            <% if article.body.length < 350 %>
+              <%= article.body %>
+            <% else %>
+              <%= article.body[0,350] %>
+              <%= link_to '[...]', article_path(article) %>
+            <% end %>
+          </p>
+      
+        </article>
+  <% end %>
+<% else %>
+  <p>Lo siento, no se han encontrado artículos <%= "del mes de #{@month} del año #{@year}" %></p>
 <% end %>
+
+
+ 

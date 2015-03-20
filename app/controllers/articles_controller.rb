@@ -66,15 +66,18 @@ class ArticlesController < ApplicationController
     #order to take the string parameters in the previous hash
     #and push them to an array 
     month_year = query["query"][0].split
-    year = month_year[0].to_i
-    month = month_year[1]
+    @year = month_year[0].to_i
+    @month = month_year[1]
     #call to the search_by_month function to obtain an array 
     #with the desired articles
-    @articles_by_month = search_by_month(year, month)
+    @articles_by_month = Article.search_by_month (@year, @month)
+    render 'month_results'
   end
+end
 
   private
     def article_params
     	params.require(:article).permit(:title, :body)
     end   	 
 end
+
