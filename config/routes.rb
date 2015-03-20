@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  # resources :user_sessions
+  resources :user_sessions
 
   get 'login' => 'user_sessions#new'
 

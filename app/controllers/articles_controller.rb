@@ -59,14 +59,18 @@ class ArticlesController < ApplicationController
   
   #Here the page with the articles ordered by month
   def month_results
-    #to retrieve the parameters from the url
+    #order to retrieve the parameters from the url
     url = URI.parse(request.original_url)
+    #order to retrieve query parameters from the url in a hash
     query = CGI.parse(url.query)
+    #order to take the string parameters in the previous hash
+    #and push them to an array 
     month_year = query["query"][0].split
-    @year = month_year[1].to_i
-    @month = month_year[0]
-    search_by_month(@year, @month)
-    render 'month_results'
+    year = month_year[0].to_i
+    month = month_year[1]
+    #call to the search_by_month function to obtain an array 
+    #with the desired articles
+    @articles_by_month = search_by_month(year, month)
   end
 
   private

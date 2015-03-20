@@ -37,7 +37,7 @@ class ArticlesDate < ActiveRecord::Base
     dates = ArticlesDate.all
     #If there are not dates, dates aside remains empty. Otherwise, loop over every date.
     dates.length < 1 ? dates_aside : dates.each do |date|
-      #First, I keep years in a aside_years if it does not keep them yet
+      #First, I keep years in a aside_years if they have not been kept yet
       aside_year = date.year
       if dates_aside.include?(aside_year) == false
         #As the year is not in dates_aside variable, I keep it as key and its value is

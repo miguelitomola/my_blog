@@ -5,7 +5,8 @@
         <h3 class="year"><%= year %></h3>
         <ul class="hide_months months">
 
-        <!-- to pass the month into a query in the url -->
+        <!-- to pass the month into a query in the url, 
+        and load month_results action -->
         
         <% months == [] ? month = "" : months.sort.each do |month| %>
           <li><%= link_to month, controller: "articles", action: "month_results", query: "#{year} #{month}" %></li>

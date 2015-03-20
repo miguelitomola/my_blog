@@ -1,5 +1,5 @@
-<% @articles_by_month.each do |article|%>
-  <%= article. title %>
-  <%= article.articles_date.year %>
-  <%= article.body %>
+<% @articles_by_month.sort{ |x,y| y <=> x }.each do |article|%>
+  <p><%= article.title %></p>
+  <p><%= "#{article.articles_date.day} de #{article.articles_date.month} de #{article.articles_date.year}" %></p>
+  <p><%= article.body %></p>
 <% end %>
