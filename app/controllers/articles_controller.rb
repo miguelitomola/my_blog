@@ -57,15 +57,16 @@ class ArticlesController < ApplicationController
 		redirect_to articles_path
 	end
   
-  #Here the page with the articles ordered by date
+  #Here the page with the articles ordered by month
   def month_results
     #to retrieve the parameters from the url
-    url = URI.parse()
+    url = URI.parse(request.original_url)
     query = CGI.parse(url.query)
     month_year = query["query"][0].split
-    @month = month_year[0]
     @year = month_year[1].to_i
-    render 'results'
+    @month = month_year[0]
+    search_by_month(@year, @month)
+    render 'month_results'
   end
 
   private

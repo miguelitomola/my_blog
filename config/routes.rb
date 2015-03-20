@@ -4,13 +4,15 @@ Rails.application.routes.draw do
 
   get 'about_me' => 'staticpages#about_me'
 
+  get 'month_results' => 'articles#month_results'
+
   resources :articles do
     resources :comments
   end
 
   resources :users
 
-  resources :user_sessions
+  # resources :user_sessions
 
   get 'login' => 'user_sessions#new'
 

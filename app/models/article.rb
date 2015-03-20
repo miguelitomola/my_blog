@@ -6,4 +6,5 @@ class Article < ActiveRecord::Base
 end
 
 def search_by_month (year, month)
-	Article.where(year).where(month)
+	@articles_by_month = Article.where(year: year).where(month: month)
+end

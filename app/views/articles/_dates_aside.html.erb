@@ -8,7 +8,7 @@
         <!-- to pass the month into a query in the url -->
         
         <% months == [] ? month = "" : months.sort.each do |month| %>
-          <li><%= link_to month, controller: "articles", action: "index", query: "#{month} #{year}" %></li>
+          <li><%= link_to month, controller: "articles", action: "month_results", query: "#{year} #{month}" %></li>
         <% end %>
         </ul>
       </div>
