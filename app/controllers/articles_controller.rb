@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
 
 		redirect_to articles_path
 	end
-  
+
   #Here the page with the articles ordered by month
   def month_results
     #order to retrieve the parameters from the url
@@ -70,14 +70,11 @@ class ArticlesController < ApplicationController
     @month = month_year[1]
     #call to the search_by_month function to obtain an array 
     #with the desired articles
-    @articles_by_month = Article.search_by_month (@year, @month)
-    render 'month_results'
+    @articles_by_month = search_by_month(@year, @month)     
   end
-end
 
   private
     def article_params
     	params.require(:article).permit(:title, :body)
     end   	 
 end
-

@@ -12,7 +12,6 @@
 <body>
   <section class="main_section">
     <section class="nav_section">
-        <%= notice %>
         <nav class="user_nav">
           <% if current_user %>
             <%= link_to "Editar perfil", edit_user_path(:current) %>
@@ -52,6 +51,8 @@
           <%= link_to 'Nuevo artículo', new_article_path %>
         <% end %>   
       </nav>
+      <p class = "notice"><%= notice %></p>
+
     </section>
 
     <section class="titles_container">

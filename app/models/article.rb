@@ -5,7 +5,9 @@ class Article < ActiveRecord::Base
 	                  length: { minimum: 5 }
 end
 
-def self.search_by_month (year, month)
+#This must be an instance method, so no self
+#must be written
+def search_by_month (year, month)
 	dates_by_month = ArticlesDate.where(year: year).where(month: month)
 	array_articles_by_month = []
 	c = 0
