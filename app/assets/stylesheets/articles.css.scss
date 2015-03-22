@@ -29,7 +29,7 @@ body{
 	background-image: url(code_background.png);
 	background-attachment: fixed;
 	cursor: $default_cursor;
-	font-family: $trebuchet;
+  font-family: 'Nova Square', cursive;
 }
 
 a{
@@ -97,7 +97,7 @@ a{
 	border: 2px solid $blue-dark;
 	border-width: 2px 0 2px 0;
 	font-weight: bold;
-	text-shadow: 3px 3px #FFF;
+	text-shadow: 3px 3px #969696;
 }
 
 .main_title{
@@ -112,6 +112,10 @@ a{
 		text-decoration: none;
 		color: $blue-dark;
 	}
+}
+
+.main_title a:hover{
+	color: #8F1515;
 }
 
 .title{
@@ -148,7 +152,7 @@ a{
 	text-align: left;
 	border: 1px solid $blue-dark;
 	border-width: 2px 0 0 0;
-	margin-bottom: 20px;
+	margin-bottom: 35px;
 }
 
 .subtitle{
@@ -169,39 +173,53 @@ a{
 	margin: 0 auto;
 }
 
-.articles_cocontainer{
-  position: absolute;
-  right: 2rem;
+.articles_container{
+  position: relative;
+  display: inline-block;
+  width: 790px;
+  min-height: 463px;
 }
 
-.articles_container_1{
-	width: 39%;	
+.articles_container_1, .articles_container_2{
+	position: relative;
+	width: 375px;	
+	min-height: 463px;	
 	display: inline-block;
-	margin-right: 0.5rem;
-	border-right: 1px solid black;
+	margin-right: 30px;
+  vertical-align: top;	
 }
 
 .articles_container_2{
-	width: 39%;	
-	display: inline-block;
-}
-
-.art_title{
-	margin-right: 0.4rem;
-	display: inline-block;
+  margin: 0;
 }
 
 .article{
-	@include border-radius(0 1rem);
-	font-size: 1.2rem;
-	font-family: $dekko;
-	display: block;
-	box-sizing: border-box;
-	padding: 1rem; 
+	font-size: 16px;		
+	margin-bottom: 35px;
+	text-align: justify;
+	line-height: 150%;
+	p{	
+	font-family: "Arial Narrow", Arial, sans-serif;		 
+	}
+}
+
+.art_title{
+	display: inline-block;
+	font-size: 28px;
+	margin-right: 20px;
+	margin-bottom: 12px;
+	a{
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
 }
 
 .date{
 	display: inline-block;
+	position: relative;
+	font-size: 18px;
 	color: rgb(107, 13, 13);
 }
 
@@ -210,5 +228,28 @@ footer{
   height: 50px;
   position: relative;
   margin: 0 auto;
-  background-color: yellow;	
+  background-color: #C2C2C2;
+  box-sizing: border-box;
+  padding-top: 15px;
+  font-size: 20px;
+  text-align: center;
+  color: #191930;
+  @include border-radius(10px 10px 0 0);
+  p{
+  	width: 40%;
+  	display: inline-block;
+  }
+  div{
+  	display: inline-block;
+  	width: 25%;
+  	border-top: 2px solid $blue-dark;
+  	vertical-align: middle;
+  }	
+  a{
+  	text-decoration: none;
+  	color: #800000;
+  }
+  a:hover{
+  	text-decoration: underline;
+  }
 }

@@ -1,5 +1,5 @@
 <% @page_name = "Bienvenid@" %>
-<section class="articles_cocontiner">
+<section class="articles_container">
   <div class="articles_container_1">
   <% if @articles_1.any? %>
     <% @articles_1.each do |article| %>
@@ -17,7 +17,7 @@
           <% end %>
           <p>
             <% if article.body.length < 350 %>
-              <%= article.body %>
+              <%= simple_format(article.body) %>
             <% else %>
               <%= article.body[0,350] %>
               <%= link_to '[...]', article_path(article) %>
