@@ -81,22 +81,25 @@ $contact_b_height: 1.25rem;
 }
 
 .contact_button_li{
-	cursor: $default_cursor;
+	cursor: default;
 }
 
 
 .sub_nav{
 	@extend .general_nav;
 	float: none;
-	@include border-radius(0 1rem 1rem 1rem);
+	@include border-radius(0 0 10px 10px);
 	position: absolute;
-	left: 0rem;
+	left: 0px;
 	top: $contact_b_height;
-	background-color: rgb(54, 69, 124);
+	width: 90px;
+	background-color: #0B1539;
+	z-index: 1;
 }
 
 .sub_nav_2{
-  padding: 0.2rem;
+	box-sizing: border-box;
+  padding: 10px;
 }
 
 .bookmark{

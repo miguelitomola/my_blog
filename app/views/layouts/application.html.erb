@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>.:código web:.</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', defer:"defer", 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Dekko' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Original+Surfer' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application', defer:"defer" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -78,12 +78,12 @@
 
     </section>
     <footer>
-      <div></div>
+      <div class="footer_lines_1"></div>
       <p>
         Puedes ver el código de esta app
         <a href="https://github.com/miguelitomola/my_blog">aquí</a>
       </p>
-      <div></div>
+      <div class="footer_lines_2"></div>
     </footer>
   </section>
   <!-- Scripts to defer javascript load. For old browsers; -->

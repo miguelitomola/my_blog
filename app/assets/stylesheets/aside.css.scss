@@ -6,7 +6,7 @@ $link_cursor: url('link.cur'), auto;
 $header-font: 'Dekko', cursive;
 
 //Colors:
-$blue-dark: #2F2F5A;
+$blue-dark: #403F56;
 
 //Border radius mixin:
 @mixin border-radius ($radius:10px 10px 10px 10px){
@@ -53,6 +53,6 @@ $blue-dark: #2F2F5A;
 }
 
 .year{
-  cursor: $link_cursor;
+  cursor: pointer;
   display: inline-block;
 }
