@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
 	                  length: { minimum: 5 }
 end
 
+
 #This must be an instance method, so no self
 #must be written
 def search_by_month (year, month)

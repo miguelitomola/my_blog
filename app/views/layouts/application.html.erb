@@ -12,62 +12,69 @@
 <body>
   <section class="main_section">
     <section class="nav_section">
-        <nav class="user_nav">
-          <% if current_user %>
-            <%= link_to "Editar perfil", edit_user_path(:current) %>
-            <span>|</span>
-            <%= link_to "Logout", logout_path %>
-          <% else %>
-            <%= link_to "Regístrate", new_user_path %>
-            <span>|</span>
-            <%= link_to "Inicia sesión", login_path %>
-          <% end %>
-        </nav>
-  
-        <nav class="general_nav">
-          <%= link_to 'Inicio', root_path %>
+      <nav class="user_nav">
+        <% if current_user %>
+          <%= link_to "Editar perfil", edit_user_path(:current) %>
           <span>|</span>
-          <%= link_to "About me", about_me_path %>
-          <span>|</span>
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+            <%= link_to "Zona Admin", login_path %>
+        <% end %>
+      </nav>
+
+      <nav class="general_nav">
+        <%= link_to 'Inicio', root_path %>
+        <span>|</span>
+        <%= link_to "About me", about_me_path %>
+        <span>|</span>
+
+        <ul class="contact_button">
+          <li class="contact_button_li">Contacto ↓</li>
+          <li class="sub_nav display_none">
+            <ul>
+              <li class="sub_nav_2 bookmark">
+                <%= link_to 'twitter', "https://twitter.com/miguelitomola" %>
+              </li>
+              <li class="sub_nav_2">
+                <%= mail_to 'miganml@outlook.com', 'e-mail' %>
+              </li>
+            </ul>  
+          </li>
+        </ul>
   
-          <ul class="contact_button">
-            <li class="contact_button_li">Contacto ↓</li>
-            <li class="sub_nav display_none">
-              <ul>
-                <li class="sub_nav_2 bookmark">
-                  <%= link_to '@miguelitomola', "https://twitter.com/miguelitomola" %>
-                </li>
-                <li class="sub_nav_2">
-                  <%= mail_to 'e-mail', "miganml@outlook.com" %>
-                </li>
-              </ul>  
-            </li>
-          </ul>
-  
-        <% if current_user && current_user.admin_flag == true%>
+        <% if current_user && current_user.admin_flag == true %>
           <span>|</span>
           <%= link_to 'Usuarios', users_path %>
           <span>|</span>
           <%= link_to 'Nuevo artículo', new_article_path %>
         <% end %>   
       </nav>
-      <p class = "notice"><%= notice %></p>
-
+      <span class = "notice"><%= notice %></span>
+      <div class="auto-height"></div>
     </section>
 
     <section class="titles_container">
+      <div class="logo">
+        <a href="/articles"><img src="assets/coding_4.png" alt=""></a>
+      </div>
       <div class="main_title_container">
-        <h1 class="h1 main_title">Código weB</h1>
+        <h1 class="h1 main_title"><%= link_to "<código web>", root_path %></h1>
         <h2 class="h2 title"><%= link_to "by miguelitomola", about_me_path %></h2>
       </div>
+    </section>
+        
+
+    <section class="info_container">
+    
+      <%= render 'articles/dates_aside', controller:"articles" %>
+  
       <div class="subtitle_container">
         <h2 class="h2 subtitle"><%= @page_name %></h2>
       </div>
-    </section>
 
-    <%= render 'articles/dates_aside', controller:"articles" %>
-      
-    <%= yield %>
+      <%= yield %>
+
+    </section>
     <footer>
       <p>
         Puedes ver el código de esta app

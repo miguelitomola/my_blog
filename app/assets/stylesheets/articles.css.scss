@@ -14,52 +14,50 @@ $blue-celeste: #8FB9D4;
 $blue-dark: #2F2F5A;
 
 //Font variables:
-$header-font: 'Dekko', cursive;
+$dekko: 'Dekko', cursive;
 $article-font: 'Original Surfer', cursive;
+$trebuchet: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
 
 //Border radius mixin:
-@mixin border-radius ($radius:0 0 1rem 1rem){
+@mixin border-radius ($radius:0 0 10px 10px){
 	-webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
 
 body{
-	background-color: $blue-transparent;
+	background-image: url(code_background.png);
+	background-attachment: fixed;
 	cursor: $default_cursor;
+	font-family: $trebuchet;
 }
 
 a{
 	cursor: $link_cursor;
 }
 
-
-.notice {
-	
+.auto-height{
+	clear: both;
 }
 
 .main_section{
-	width: 80%;
-	margin: 0 auto;
+	width: 1024px;
 	background-color: white;
-	min-height: 50rem;
-	padding: 0 1rem 1rem 1rem;
+	min-height: 768px;
 	position: relative;
+	margin: 0 auto;
 }
 
 .h1{
-	font-size: 3.5rem;
-	font-family: $header-font;
+	font-size: 70px;
 }
 
 .h2{
-	font-size: 2rem;
-	font-family: $header-font;
+	font-size: 32px;
 }
 
 .h3{
-  font-size: 1.5rem;
-	font-family: $header-font;
+  font-size: 26px;
 }
 
 .inline{
@@ -71,41 +69,66 @@ a{
 }
 
 .titles_container{
-	@include border-radius(1rem);
-	width: 83%;
-	background-color: $blue-transparent;
+	@include border-radius(10px);
+	width: 974px;
+	min-height: 90px;
+	background-color: #FFF;
 	box-sizing: border-box;
+	position: relative;
 	margin: 0 auto;
-	margin-top: 3.5rem;
-	margin-bottom: 4rem;
-	border: 0.1rem solid rgb(54, 69, 124);
+	margin-bottom: 25px;
+}
+
+.logo{
+	width: 90px;
+	height: 90px;
+	position: relative;
+	float: left;
 }
 
 .main_title_container{
-	@include border-radius(1rem 2rem 0 1rem);
-	background-color: $blue-celeste;
-	text-align: center;
-	padding: 1rem;
-	display: inline-block;
-	width: 60%;
+	width: 884px;
+	height: 90px;
 	box-sizing: border-box;
+	padding: 0;
+	position: relative;
+	display: inline-block;
+	background-image: url(keyboard.jpg);
+	border: 2px solid $blue-dark;
+	border-width: 2px 0 2px 0;
+	font-weight: bold;
+	text-shadow: 3px 3px #FFF;
 }
 
 .main_title{
-  display: inline-block;
+  width: 526px;
+  position: relative;
+  float: left;
+  margin-top: 10px;
 	color: $blue-dark;
+	font-variant: small-caps;
+	text-align: center;
+	a{
+		text-decoration: none;
+		color: $blue-dark;
+	}
 }
 
 .title{
-	display: inline-block;
-  	a:visited, a:link{
+	position: relative;
+	margin: 10px 15px 0	 0;
+	float: right;
+  	a{
 		  text-decoration: none;
-		  color: $blue-dark;
+		  color: #1A254B;
+		}
+		a:hover{
+			text-decoration: underline;
 		}
 }
 
 .tools{
-	font-family: $header-font;
+	font-family: $dekko;
 	font-size: 1.1rem;
 	display: block;
 	margin: 0 auto;
@@ -117,14 +140,33 @@ a{
   }	
 }
 
-.subtitle_container{
-	text-align: center;
-	display: inline-block;
-	width: 35%;
+.subtitle_container{	
+	width: 790px;
+	height: 50px;
+	position: relative;
+	float: left;
+	text-align: left;
+	border: 1px solid $blue-dark;
+	border-width: 2px 0 0 0;
+	margin-bottom: 20px;
 }
 
 .subtitle{
-	color: white;
+	display: inline-block;
+	height: 40px;	
+	padding: 10px 10px 0 10px;
+	background-color: $blue-dark;
+	color: #FFF;
+	border: 1px solid $blue-dark;
+	border-width: 0 2px 2px 0;
+	@include border-radius(0 0 10px 10px);	
+}
+
+.info_container{
+	width: 974px;
+	min-height: 563px;
+	position: relative;
+	margin: 0 auto;
 }
 
 .articles_cocontainer{
@@ -152,9 +194,8 @@ a{
 .article{
 	@include border-radius(0 1rem);
 	font-size: 1.2rem;
-	font-family: $header-font;
+	font-family: $dekko;
 	display: block;
-	margin: 1rem 0 1rem 0;
 	box-sizing: border-box;
 	padding: 1rem; 
 }
@@ -162,4 +203,12 @@ a{
 .date{
 	display: inline-block;
 	color: rgb(107, 13, 13);
+}
+
+footer{
+  width: 974px;
+  height: 50px;
+  position: relative;
+  margin: 0 auto;
+  background-color: yellow;	
 }

@@ -5,19 +5,37 @@ $link_cursor: url('link.cur'), auto;
 //Font variables:
 $header-font: 'Dekko', cursive;
 
+//Colors:
+$blue-dark: #2F2F5A;
+
+//Border radius mixin:
+@mixin border-radius ($radius:10px 10px 10px 10px){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
 
 .dates_aside{
-	font-family: $header-font;
-	font-size: 1.3rem;
-	background-color: lightblue;
-	display: inline-block; 
-  float: left;
+  min-height: 538px;
   box-sizing: border-box;
-  width: 17%;
-  min-height: 25rem;
-  padding: 0.4rem;
-  margin-left: 0.5rem;
-  margin-right: 1rem;
+  position: relative;
+  float: left;
+  font-size: 18px;
+  background-color: $blue-dark;
+  color: #FFF; 
+  width: 150px;
+  padding: 15px;
+  margin-right: 25px;
+  line-height: 150%;
+  @include border-radius;
+  a{
+    color: #FFF;
+    text-decoration: none;
+  }
+  a:hover, h3:hover{
+    text-decoration: underline;
+  }
 }
 
 .hide_months{

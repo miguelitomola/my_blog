@@ -7,6 +7,7 @@ $user_nav-font: 'Dekko', cursive;
 //Color variables:
 $blue-transparent: rgba(0, 20, 89, 0.79);
 $border-bookmark: rgba(189, 195, 239, 0.44);
+$darkblue: #403F56;
 
 //Div sizes variables:
 $contact_b_height: 1.25rem;
@@ -24,30 +25,49 @@ $contact_b_height: 1.25rem;
 }
 
 .nav_section{
+	position: relative;
 	margin: 0 auto;
-	width: 99%;
-	height: 2rem;
-	margin-bottom: 0.5rem;
+	width: 974px;
+	min-height: 30px;
+	margin-bottom: 25px;
 }
 
 .user_nav{
-	@include border-radius;
+	@include border-radius(0 0 10px 10px);
+	width: auto;	
+	min-height: 30px;
+	box-sizing: border-box;
+	padding: 8px 5px 8px 5px;
+	position: relative;
 	float: right;
-	font-size: 1.3rem;
-	font-family: $user_nav-font;
-	background-color: $blue-transparent;
-	padding: 0.5rem;
+	font-size: 17px;
+	background-color: $darkblue;
 	a{
   	text-decoration: none;
 		color: white;
+	}
+	a:hover, li:hover{
+		color: #20FF1B;
 	}
 	span{
 		color: $border-bookmark;
 	}
 }
 
+.notice {
+	width: auto;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 8px 5px 8px 5px;
+  float: right;
+  position: relative;
+  margin-right: 15px;	
+  font-size: 20px;
+  font-weight: bold;
+  color: #C20505;
+}
+
 .general_nav{
-	@include border-radius;
   @extend .user_nav;
   float: left;
 }
