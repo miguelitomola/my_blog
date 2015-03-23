@@ -15,15 +15,24 @@
               <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
             </h3>
           <% end %>
-          <p>
+          <div>
             <% if article.body.length < 350 %>
               <%= simple_format(article.body) %>
             <% else %>
               <%= article.body[0,350] %>
               <%= link_to '[...]', article_path(article) %>
             <% end %>
-          </p>
-      
+          </div>
+          <div class="number_comments">
+            <% number_comments = article.comments.count %>
+            <% if number_comments == 1 %>
+              <% number_comments = "#{number_comments} comentario ⌨" %>
+            <% else %>
+              <% number_comments = "#{number_comments} comentarios ⌨" %>
+            <% end %>
+              <%= link_to "#{number_comments}", article_path(article) + "#comments" %>
+          </div>
+
         </article>
       <% end %> 
     <% end %>
@@ -44,14 +53,18 @@
               <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
             </h3>
           <% end %>
-          <p>
+          <div>
             <% if article.body.length < 350 %>
               <%= article.body %>
             <% else %>
               <%= article.body[0,350] %>
               <%= link_to '[...]', article_path(article) %>
             <% end %>
-          </p>
+          </div>
+          <div class="number_comments">
+            <% number_comments = article.comments.count %>
+            <%= link_to "#{number_comments} comentarios ⌨", article_path(article) + "#comments" %>
+          </div>
       
         </article>
       <% end %> 
