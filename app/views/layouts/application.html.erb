@@ -87,33 +87,5 @@
     </footer>
   </section>
   <!-- Scripts to defer javascript load. For old browsers; -->
-    <script type="text/javascript">
-    function downloadJSAtOnload() {
-      var element = document.createElement("script");
-      element.src = "assets/nav_slide.js";
-      document.body.appendChild(element);
-    };
-    if (window.addEventListener){
-      window.addEventListener("load", downloadJSAtOnload, false);
-    }else if(window.attachEvent){
-      window.attachEvent("onload", downloadJSAtOnload);
-    }else{
-      window.onload = downloadJSAtOnload;
-    };
-    </script>
-    <script type="text/javascript">
-    function downloadJSAtOnload() {
-      var element2 = document.createElement("script");
-      element2.src = "assets/aside_dates.js";
-      document.body.appendChild(element2);
-    };
-    if (window.addEventListener){
-      window.addEventListener("load", downloadJSAtOnload, false);
-    }else if(window.attachEvent){
-      window.attachEvent("onload", downloadJSAtOnload);
-    }else{
-      window.onload = downloadJSAtOnload;
-    };
-    </script>
 </body>
 </html>
