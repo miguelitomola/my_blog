@@ -7,16 +7,19 @@ $default_cursor: url('default.cur'), auto;
 $link_cursor: url('link.cur'), auto;
 
 //Color variables:
-$turquoise: rgb(17, 89, 95);
+$turquoise: #0B9087;
 $beige-transparent: rgba(142, 177, 139, 0.56);
 $blue-transparent: rgba(0, 20, 89, 0.79);
 $blue-celeste: #8FB9D4;
-$blue-dark: #403F56;
+$blue-dark: #191735;
+$blue-hover: #00B3A6;
+
 
 //Font variables:
 $dekko: 'Dekko', cursive;
 $article-font: 'Original Surfer', cursive;
 $trebuchet: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+$nova_square: 'Nova Square', cursive;
 
 //Border radius mixin:
 @mixin border-radius ($radius:0 0 10px 10px){
@@ -29,7 +32,7 @@ body{
 	background-image: url(code_background.png);
 	background-attachment: fixed;
 	// cursor: $default_cursor;
-  font-family: 'Nova Square', cursive;
+  font-family: $nova_square;
 }
 
 // a{
@@ -194,7 +197,7 @@ body{
 
 .article{
 	font-size: 16px;		
-	margin-bottom: 35px;
+	margin-bottom: 75px;
 	text-align: justify;
 	line-height: 150%;
 	div{	
@@ -207,11 +210,12 @@ body{
 	font-size: 38px;
 	margin-right: 20px;
 	a{
-		color: #007BAF;
+		color: $turquoise;
 		text-decoration: none;
 	}
 	a:hover{
-		text-decoration: underline;
+		color: #000077;
+		text-shadow:0px 2px 2px $turquoise, 0px 2px 2px $turquoise,	0px 2px 2px $turquoise, 0px 2px 2px $turquoise;
 	}
 }
 
@@ -221,6 +225,24 @@ body{
 	color: rgb(107, 13, 13);
 	margin-bottom: 12px;
 }
+
+.art_body{
+	margin-bottom: 15px;
+}
+
+.number_comments{
+	font-size: 15px;
+  a{
+  	text-decoration: none;
+  	color: $blue-dark;
+  	font-family: $nova_square;
+  }
+  a:hover{
+  	text-decoration: underline;
+  	font-family: $nova_square;
+  }
+}
+
 
 footer{
   width: 974px;
@@ -232,9 +254,10 @@ footer{
   padding-top: 15px;
   font-size: 20px;
   text-align: center;
-  color: #191930;
+  color: $blue-dark;
   border-top: 2px solid $blue-dark;
   p{
+  	color: inherit;
   	width: 40%;
   	display: inline-block;
   }

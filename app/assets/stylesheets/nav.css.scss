@@ -6,8 +6,9 @@ $user_nav-font: 'Dekko', cursive;
 
 //Color variables:
 $blue-transparent: rgba(0, 20, 89, 0.79);
-$border-bookmark: rgba(189, 195, 239, 0.44);
-$darkblue: #403F56;
+$border-bookmark: #6C60E1;
+$green-hover: #20FF1B;
+$blue-dark: #191735;
 
 //Div sizes variables:
 $contact_b_height: 1.25rem;
@@ -41,13 +42,13 @@ $contact_b_height: 1.25rem;
 	position: relative;
 	float: right;
 	font-size: 17px;
-	background-color: $darkblue;
+	background-color: $blue-dark;
 	a{
   	text-decoration: none;
 		color: white;
 	}
 	a:hover, li:hover{
-		color: #20FF1B;
+		color: $green-hover;
 	}
 	span{
 		color: $border-bookmark;
@@ -93,7 +94,7 @@ $contact_b_height: 1.25rem;
 	left: 0px;
 	top: $contact_b_height;
 	width: 90px;
-	background-color: #0B1539;
+	background-color: #384162;
 	z-index: 1;
 }
 
