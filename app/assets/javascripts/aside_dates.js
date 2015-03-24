@@ -20,4 +20,28 @@ function dates_tree(){
 window.addEventListener("load", dates_tree, false);
 
 
+function aside_height_calc(aside_height){
+  var aside = document.getElementsByClassName("dates_aside")[0];
+  aside.style.height = ((aside_height) .toString())+"px";
+}
+
+function aside_height_index(){
+  var art_container = document.getElementsByClassName("articles_container")[0];
+  var height_ac = art_container.offsetHeight;
+
+  var subt_container = document.getElementsByClassName("subtitle_container")[0];
+  var height_sc = subt_container.offsetHeight;
+  var margin_sc = parseInt(window.getComputedStyle(subt_container,null).getPropertyValue("margin-bottom"));
+  var size_y_sc = height_sc + margin_sc;
+
+  var one_article = document.getElementsByClassName("article")[0];
+  var margin_oa = parseInt(window.getComputedStyle(one_article, null).getPropertyValue("margin-bottom"));
+
+  var aside_height = height_ac + size_y_sc - (margin_oa*0.34);  
+  aside_height_calc(aside_height);
+}
+
+window.addEventListener("load", aside_height_index, false);
+
+
 
