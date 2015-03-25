@@ -7,7 +7,17 @@ $header-font: 'Dekko', cursive;
 $article-font: 'Original Surfer', cursive;
 
 //Color variables:
-$write-comments-background: rgba(142, 170, 239, 0.76);	
+$write-comments-background: rgba(142, 170, 239, 0.76);
+$blue-dark: #191735;
+$beige-footer: #D6D6D6;
+$blue-dark: #191735;
+
+//Border radius mixin:
+@mixin border-radius ($radius:0 0 10px 10px){
+	-webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}		
 
 .comments{
 	width: 100%;
@@ -22,4 +32,28 @@ $write-comments-background: rgba(142, 170, 239, 0.76);
 .write_comment_field{
 	width: 50%;
 	height: 60px;
+}
+
+.add_comment_container{
+	position: relative;
+	width: 790px;
+	height: 40px;	
+	border: 1px solid $blue-dark;
+	border-width: 2px 0 0 0;
+	margin-top: 30px;
+}
+
+.add_comment_title{	
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 40px;
+	padding: 10px 10px 0 10px;
+	border: 1px solid $blue-dark;
+	border-width: 0 2px 2px 2px;
+	@include border-radius(0 0 10px 10px);	
+	margin-bottom: 	25px;
+	background-color: $beige-footer;
+	color: $blue-dark;
+	text-align: left;
 }

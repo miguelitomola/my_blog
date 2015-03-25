@@ -29,8 +29,8 @@ end
 
 def add_body_to_articles
   Article.all.each do |article|
-    article.body = 'Lorem ipsum dolor sit amet, 
-              consectetur adipisicing elit. 
+    article.body = 'Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit.
               Cupiditate beatae facilis deleniti
               cumque eligendi error totam deserunt 
               ex ut exercitationem reiciendis 

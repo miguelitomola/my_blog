@@ -9,20 +9,14 @@
           <h2 class="h2 art_title">
             <%= link_to "#{article.title}", article_path(article) %>
           </h2>
+
           <% if article.articles_date != nil %>
             <h3 class="h3 date">
               <% art_date = article.articles_date %>
               <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
             </h3>
           <% end %>
-          <div class="art_body">
-            <% if article.body.length < 350 %>
-              <%= simple_format(article.body) %>
-            <% else %>
-              <%= article.body[0,350] %>
-              <%= link_to '[...]', article_path(article) %>
-            <% end %>
-          </div>
+
           <div class="number_comments">
             <% number_comments = article.comments.count %>
             <% if number_comments == 1 %>
@@ -32,6 +26,18 @@
             <% end %>
               <%= link_to "#{number_comments}", article_path(article) + "#comments" %>
           </div>
+
+          <div class="art_body">
+            <% if article.body.length < 350 %>
+              <%= simple_format h article.body %>
+            <% else %>
+              <%= simple_format h article.body[0,350] %>
+            <% end %>
+          </div>
+
+          <% if article.body.length < 350 == false %>
+            <%= link_to '[...sigue...]', article_path(article), class:"read_more" %>
+          <% end %>             
 
         </article>
       <% end %> 
@@ -47,20 +53,14 @@
           <h2 class="h2 art_title">
             <%= link_to "#{article.title}", article_path(article) %>
           </h2>
+
           <% if article.articles_date != nil %>
             <h3 class="h3 date">
               <% art_date = article.articles_date %>
               <%= "#{art_date.day} de #{art_date.month} de #{art_date.year}" %>
             </h3>
           <% end %>
-          <div class="art_body">
-            <% if article.body.length < 350 %>
-              <%= article.body %>
-            <% else %>
-              <%= article.body[0,350] %>
-              <%= link_to '[...]', article_path(article) %>
-            <% end %>
-          </div>
+
           <div class="number_comments">
             <% number_comments = article.comments.count %>
             <% if number_comments == 1 %>
@@ -70,6 +70,18 @@
             <% end %>
               <%= link_to "#{number_comments}", article_path(article) + "#comments" %>
           </div>
+
+          <div class="art_body">
+            <% if article.body.length < 350 %>
+              <%= simple_format h article.body %>
+            <% else %>
+              <%= simple_format h article.body[0,350] %>
+            <% end %>
+          </div>
+
+          <% if article.body.length < 350 == false %>
+            <%= link_to '[...sigue...]', article_path(article), class:"read_more" %>
+          <% end %>
       
         </article>
       <% end %> 

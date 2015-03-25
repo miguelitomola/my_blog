@@ -1,29 +1,41 @@
 <% @page_name = @article.title %>
- 
-<section class="article">
-  <%= @article.body %>
-  <section class="tools">
-    <span>
-      <<%= link_to 'Editar', edit_article_path(@article) %> ||
-    </span>
-    <span>
-      <%= link_to 'Eliminar', article_path(@article),
-          method: :delete,
-          data: { confirm: "¿Seguro que quieres eliminar #{@article.title}?" } %>>
-    </span>
+
+<section class="articles_container">
+
+  <% if current_user && current_user.admin_flag == true %> 
+    <section class="tools">
+      <span>
+        <%= link_to '✎ Editar', edit_article_path(@article) %>
+      </span>
+      <span>
+        <%= link_to '✘ Eliminar', article_path(@article),
+            method: :delete,
+            data: { confirm: "¿Seguro que quieres eliminar #{@article.title}?" } %>
+      </span>
+    </section>
+  <% end %>
+  
+  <section class="art_body articles_reader article">
+  
+    <%= simple_format h @article.body %>
+  
   </section>
+  
+  <section class="add_comment_container">
+    <h3 class="h3 add_comment_title">Añade un comentario:</h3>
+    <%= render 'comments/form' %>
+  </section>
+
+  <a name="comments"></a>
+
+  <section class="comments">
+    <% if @article.comments defined? %>
+      <h3 class="h3">Comentarios</h2>
+      <%= render @article.comments %>
+    <% end %>
+    </div class="a">
+  </section>
+
 </section>
 
-<a name="comments"></a><section class="comments">
-  <div>
-    <% if @article.comments defined? %>
-     <h3 class="h3">Comentarios</h2>
-    <%= render @article.comments %>
-  <% end %>
-  </div class="a">
-  <div>
-    <h3 class="h3">Añade un comentario:</h2>
-    <%= render 'comments/form' %>
-  </div>
-</section>
 

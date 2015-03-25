@@ -13,11 +13,15 @@ $blue-transparent: rgba(0, 20, 89, 0.79);
 $blue-celeste: #8FB9D4;
 $blue-dark: #191735;
 $blue-hover: #00B3A6;
+$green-comments: #0E890F;
+$red-edit: #930000;
+$red-dates: rgb(107, 13, 13);
+$beige-footer: #D6D6D6;
 
 
 //Font variables:
+$arial-narrow: "Arial Narrow", Arial, sans-serif;
 $dekko: 'Dekko', cursive;
-$article-font: 'Original Surfer', cursive;
 $trebuchet: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
 $nova_square: 'Nova Square', cursive;
 
@@ -34,10 +38,6 @@ body{
 	// cursor: $default_cursor;
   font-family: $nova_square;
 }
-
-// a{
-// 	cursor: $link_cursor;
-// }
 
 .auto-height{
 	clear: both;
@@ -134,16 +134,19 @@ body{
 }
 
 .tools{
-	font-family: $dekko;
-	font-size: 1.1rem;
-	display: block;
-	margin: 0 auto;
-	margin-top: 0.8rem;
-	width: 130px;
-	a:visited, a:link{
+	position: relative;
+	display: inline-block;
+	width: 790px;
+	margin-bottom: 10px;
+	font-family: $arial-narrow;
+	font-size: 16px;
+	a{
 		text-decoration: none;
-		color: $blue-dark;
+		color: $red-edit;
   }	
+	span{
+	  margin-right: 15px;	
+	}
 }
 
 .subtitle_container{	
@@ -154,7 +157,7 @@ body{
 	text-align: left;
 	border: 1px solid $blue-dark;
 	border-width: 2px 0 0 0;
-	margin-bottom: 35px;
+	margin-bottom: 25px;
 }
 
 .subtitle{
@@ -195,23 +198,40 @@ body{
   margin: 0;
 }
 
-.article{
-	font-size: 16px;		
-	margin-bottom: 75px;
-	text-align: justify;
-	line-height: 150%;
-	div{	
-	font-family: "Arial Narrow", Arial, sans-serif;		 
-	}
+.articles_reader{
+	width: 100%;
 }
 
+.article{
+	font-size: 16px;		
+	margin-bottom: 50px;
+	text-align: justify;
+	line-height: 150%;
+}
+
+.art_body{	
+	font-family: $arial-narrow;	
+	word-spacing: 1px;
+	margin-bottom: 10px;
+}
+
+.read_more{
+	vertical-align: bottom;
+  color: $red-dates;
+  text-decoration: none;
+}	
+
+.read_more:hover{
+	color: $turquoise;
+} 
+
 .art_title{
-	display: inline-block;
 	font-size: 38px;
-	margin-right: 20px;
+	margin-bottom: 10px;
 	a{
 		color: $turquoise;
 		text-decoration: none;
+		line-height: 120%;
 	}
 	a:hover{
 		color: #000077;
@@ -221,20 +241,20 @@ body{
 
 .date{
 	position: relative;
+	display: inline-block;
 	font-size: 15px;
-	color: rgb(107, 13, 13);
+	color: $red-dates;
 	margin-bottom: 12px;
 }
 
-.art_body{
-	margin-bottom: 15px;
-}
-
 .number_comments{
+	position: relative;
+	display: inline-block;
+	float: right;
 	font-size: 15px;
   a{
   	text-decoration: none;
-  	color: $blue-dark;
+  	color: $green-comments;
   	font-family: $nova_square;
   }
   a:hover{
@@ -249,7 +269,7 @@ footer{
   height: 50px;
   position: relative;
   margin: 0 auto;
-  background-color: #C2C2C2;
+  background-color: $beige-footer;
   box-sizing: border-box;
   padding-top: 15px;
   font-size: 20px;
