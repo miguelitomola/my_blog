@@ -19,28 +19,19 @@ $blue-dark: #191735;
   border-radius: $radius;
 }		
 
-.comments{
-	width: 100%;
-	background-color: $write-comments-background;  
-	box-sizing: border-box;
-	padding: 1rem;
-	text-align: center;
-	margin: 0 auto;
-	font-family: $header-font;
-}
 
 .write_comment_field{
 	width: 50%;
 	height: 60px;
 }
 
-.add_comment_container{
+.add_comment_title_container{
 	position: relative;
 	width: 790px;
 	height: 40px;	
-	border: 1px solid $blue-dark;
-	border-width: 2px 0 0 0;
+
 	margin-top: 30px;
+	margin-bottom: 	25px;
 }
 
 .add_comment_title{	
@@ -50,10 +41,26 @@ $blue-dark: #191735;
 	height: 40px;
 	padding: 10px 10px 0 10px;
 	border: 1px solid $blue-dark;
-	border-width: 0 2px 2px 2px;
+	border-width: 2px 2px 2px 2px;
 	@include border-radius(0 0 10px 10px);	
-	margin-bottom: 	25px;
 	background-color: $beige-footer;
 	color: $blue-dark;
 	text-align: left;
+}
+
+.add_comment_body{
+  position: relative;
+	float: left;
+	margin-bottom: 25px;
+}
+
+.comments{
+	position: relative;
+  float: left;
+	width: 100%;
+	background-color: $write-comments-background;  
+	box-sizing: border-box;
+	padding: 1rem;
+	font-family: $header-font;
+	margin-bottom: 25px;
 }
