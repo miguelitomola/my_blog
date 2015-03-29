@@ -11,6 +11,11 @@ $write-comments-background: rgba(142, 170, 239, 0.76);
 $blue-dark: #191735;
 $beige-footer: #D6D6D6;
 $blue-dark: #191735;
+$green-comments: #0E890F;
+
+//Fonts:
+$nova_square: 'Nova Square', cursive;
+$trebuchet: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
 
 //Border radius mixin:
 @mixin border-radius ($radius:0 0 10px 10px){
@@ -19,40 +24,34 @@ $blue-dark: #191735;
   border-radius: $radius;
 }		
 
+.number_comments{
+	position: relative;
+	display: inline-block;
+	float: right;
+	font-size: 15px;
+  a{
+  	text-decoration: none;
+  	color: $green-comments;
+  	font-family: $nova_square;
+  }
+  a:hover{
+  	text-decoration: underline;
+  	font-family: $nova_square;
+  }
+}
+
+.number_comments_show{
+	@extend .number_comments;
+	display: block;
+	float: none;
+	margin-bottom: 20px;
+}
 
 .write_comment_field{
 	width: 50%;
 	height: 60px;
 }
 
-.add_comment_title_container{
-	position: relative;
-	width: 790px;
-	height: 40px;	
-
-	margin-top: 30px;
-	margin-bottom: 	25px;
-}
-
-.add_comment_title{	
-	position: relative;
-	display: inline-block;
-	float: left;
-	height: 40px;
-	padding: 10px 10px 0 10px;
-	border: 1px solid $blue-dark;
-	border-width: 2px 2px 2px 2px;
-	@include border-radius(0 0 10px 10px);	
-	background-color: $beige-footer;
-	color: $blue-dark;
-	text-align: left;
-}
-
-.add_comment_body{
-  position: relative;
-	float: left;
-	margin-bottom: 25px;
-}
 
 .comments{
 	position: relative;
@@ -63,4 +62,68 @@ $blue-dark: #191735;
 	padding: 1rem;
 	font-family: $header-font;
 	margin-bottom: 25px;
+}
+
+.add_comment_body{
+  position: relative;
+	float: left;
+	width: 790px;
+	margin-top: 30px;
+	margin-bottom: 25px;
+	padding-bottom: 25px;
+	border: 1px solid $blue-dark;
+	@include border-radius(10px);
+	.r1{
+		height: 30px;
+	}
+	.r2{
+		height: 135px;
+	}
+	.c1, .c2{
+		position: relative;
+		display: inline-block;
+		vertical-align: top;	
+	}
+	.c1{
+		width: 100px;
+		text-align: right;
+	}
+	.r1 .c2, .r2 .c2{
+		width: 400px;
+		input, textarea{
+			font-family: $trebuchet;
+			font-size: 15px;
+		}
+		input{
+      width: 100%;
+		}
+		textarea{
+      width: 100%;
+      height: 120px;
+		}
+	}
+	.r3 .c2 input{
+	  width: 100px;
+	  height: 30px;
+	}
+}
+
+.add_comment_title_container{
+	position: relative;
+	height: 40px;	
+	margin-bottom: 40px;
+}
+
+.add_comment_title{	
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 40px;
+	padding: 10px 10px 0 10px;
+	border: 1px solid $blue-dark;
+	border-width: 0 2px 2px 2px;
+	@include border-radius(0 0 10px 10px);	
+	background-color: $beige-footer;
+	color: $blue-dark;
+	text-align: left;
 }

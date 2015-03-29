@@ -1,20 +1,28 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
   
-  <p>
-    <%= f.label "Autor", :commenter %>
-  </p>
-  <p>
-    <%= f.text_field :commenter, value:@username %>
-  </p>
+  <div class="r1">
+    <div class="c1">
+      <%= f.label "Autor:" %>
+    </div>
+    <div class="c2">
+      <%= f.text_field :commenter, value:@username %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label "Comentario", :body %>
-  </p>
-  <p>
-    <%= f.text_area :body, class:"write_comment_field" %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="r2">
+    <div class="c1">
+      <%= f.label "Comentario:" %>
+    </div>
+    <div class="c2">
+      <%= f.text_area :body, class:"write_comment_field" %>
+    </div>
+  </div>
+
+  <div class="r3">
+    <div class="c1"></div>
+    <div class="c2">
+      <%= f.submit "Comentar" %>
+    </div>      
+  </div>
 
 <% end %>

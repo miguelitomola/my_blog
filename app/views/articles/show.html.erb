@@ -14,6 +14,16 @@
       </span>
     </section>
   <% end %>
+
+  <div class="number_comments_show">
+    <% number_comments = @article.comments.count %>
+    <% if number_comments == 1 %>
+      <% number_comments = "#{number_comments} comentario" %>
+    <% else %>
+      <%   number_comments = "#{number_comments} comentarios" %>
+    <% end %>
+      <%= link_to "#{number_comments}", article_path(@article) + "#comments" %>
+  </div>
   
   <section class="art_body articles_reader article">
   
@@ -21,16 +31,17 @@
   
   </section>
   
+  <a name="comments"></a>
+  
   <section>
-    <div class="add_comment_title_container">
-      <h3 class="h3 add_comment_title">Añade un comentario:</h3>
-    </div>
     <div class="add_comment_body">
+      <div class="c1"></div>
+      <div class="c2 add_comment_title_container">
+        <h3 class="h3 add_comment_title">Añade un comentario:</h3>
+      </div>
       <%= render 'comments/form' %>
     </div>
   </section>
-
-  <a name="comments"></a>
 
   <section class="comments">
     <% if @article.comments defined? %>

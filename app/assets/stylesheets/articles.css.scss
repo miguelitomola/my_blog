@@ -1,4 +1,4 @@
-// Place all the styles related to the articles controller here.
+	// Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -137,7 +137,7 @@ body{
 	position: relative;
 	display: inline-block;
 	width: 790px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	font-family: $arial-narrow;
 	font-size: 16px;
 	a{
@@ -245,22 +245,6 @@ body{
 	font-size: 15px;
 	color: $red-dates;
 	margin-bottom: 12px;
-}
-
-.number_comments{
-	position: relative;
-	display: inline-block;
-	float: right;
-	font-size: 15px;
-  a{
-  	text-decoration: none;
-  	color: $green-comments;
-  	font-family: $nova_square;
-  }
-  a:hover{
-  	text-decoration: underline;
-  	font-family: $nova_square;
-  }
 }
 
 
