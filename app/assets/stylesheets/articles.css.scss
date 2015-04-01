@@ -16,8 +16,8 @@ $blue-hover: #00B3A6;
 $green-comments: #0E890F;
 $red-edit: #930000;
 $red-dates: rgb(107, 13, 13);
+$red-footer: #800000;
 $beige-footer: #D6D6D6;
-
 
 //Font variables:
 $arial-narrow: "Arial Narrow", Arial, sans-serif;
@@ -137,7 +137,7 @@ body{
 	position: relative;
 	display: inline-block;
 	width: 790px;
-	margin-bottom: 20px;
+	margin-top: 20px;
 	font-family: $arial-narrow;
 	font-size: 16px;
 	a{
@@ -157,7 +157,6 @@ body{
 	text-align: left;
 	border: 1px solid $blue-dark;
 	border-width: 2px 0 0 0;
-	margin-bottom: 25px;
 }
 
 .subtitle{
@@ -204,7 +203,7 @@ body{
 
 .article{
 	font-size: 16px;		
-	margin-bottom: 50px;
+	margin-top: 30px;
 	text-align: justify;
 	line-height: 150%;
 }
@@ -253,6 +252,7 @@ footer{
   height: 50px;
   position: relative;
   margin: 0 auto;
+  margin-top: 25px;
   background-color: $beige-footer;
   box-sizing: border-box;
   padding-top: 15px;
@@ -273,7 +273,7 @@ footer{
   }	
   a{
   	text-decoration: none;
-  	color: #800000;
+  	color: $red-footer;
   }
   a:hover{
   	text-decoration: underline;

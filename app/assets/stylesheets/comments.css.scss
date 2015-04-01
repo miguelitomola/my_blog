@@ -12,6 +12,7 @@ $blue-dark: #191735;
 $beige-footer: #D6D6D6;
 $blue-dark: #191735;
 $green-comments: #0E890F;
+$red-footer: #800000;
 
 //Fonts:
 $nova_square: 'Nova Square', cursive;
@@ -44,32 +45,15 @@ $trebuchet: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",T
 	@extend .number_comments;
 	display: block;
 	float: none;
-	margin-bottom: 20px;
+	margin-top: 30px;
 }
 
-.write_comment_field{
-	width: 50%;
-	height: 60px;
-}
-
-
-.comments{
-	position: relative;
-  float: left;
-	width: 100%;
-	background-color: $write-comments-background;  
-	box-sizing: border-box;
-	padding: 1rem;
-	font-family: $header-font;
-	margin-bottom: 25px;
-}
-
-.add_comment_body{
+.add_comment{
   position: relative;
-	float: left;
+  display: inline-block;
 	width: 790px;
 	margin-top: 30px;
-	margin-bottom: 25px;
+	margin-bottom: 50px;
 	padding-bottom: 25px;
 	border: 1px solid $blue-dark;
 	@include border-radius(10px);
@@ -108,6 +92,11 @@ $trebuchet: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",T
 	}
 }
 
+.write_comment_field{
+	width: 50%;
+	height: 60px;
+}
+
 .add_comment_title_container{
 	position: relative;
 	height: 40px;	
@@ -117,13 +106,66 @@ $trebuchet: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",T
 .add_comment_title{	
 	position: relative;
 	display: inline-block;
-	float: left;
 	height: 40px;
 	padding: 10px 10px 0 10px;
 	border: 1px solid $blue-dark;
-	border-width: 0 2px 2px 2px;
+	border-width: 0 1px 1px 1px;
 	@include border-radius(0 0 10px 10px);	
 	background-color: $beige-footer;
 	color: $blue-dark;
-	text-align: left;
+}
+
+.comments{
+	position: relative;
+	display: inline-block;
+	width: 790px;  
+	box-sizing: border-box;
+	padding: 0 0 10px 0;
+	line-height: 150%;
+	.r0{
+		position: relative;
+	  margin-bottom: 30px;	
+	  h3{
+	  	position: relative;
+	    color: $blue-dark;
+	    font-size: 32px;
+	  }
+	}
+	.r1{
+		background-color: $beige-footer;
+		margin-top: 20px;
+		padding: 10px 10px;
+		border: 1px solid $blue-dark;
+	  font-family: $trebuchet;
+		color: $blue-dark;
+		@include border-radius(10px);	
+		.c1{
+			position: relative;
+			float: left;
+			width: 100px;
+			height: 15px;
+			text-align: right;
+			margin-right: 5px;
+			color: $red-footer;
+			font-family: $nova_square;
+		}
+		.c2{
+      position: relative;
+			display: inline-block;
+			width: 655px;
+			height: 15px;
+			text-align: justify;
+	    font-size: 14px;
+		}
+		.r14{
+			text-align: right;
+			a{
+				text-decoration: none;
+				color: green;
+			}
+			a:hover{
+				background-color: yellow;
+			}
+		}
+	}	
 }

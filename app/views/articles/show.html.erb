@@ -31,26 +31,41 @@
   
   </section>
   
-  <a name="comments"></a>
-  
-  <section>
-    <div class="add_comment_body">
-      <div class="c1"></div>
-      <div class="c2 add_comment_title_container">
-        <h3 class="h3 add_comment_title">Añade un comentario:</h3>
-      </div>
-      <%= render 'comments/form' %>
+  <section class="add_comment">
+    <div class="c1"></div>
+    <div class="c2 add_comment_title_container">
+      <h3 class="h3 add_comment_title">Añade un comentario:</h3>
     </div>
+
+    <%= render 'comments/form' %>
+  
   </section>
+ 
+  <a name="comments"></a>
 
   <section class="comments">
-    <% if @article.comments defined? %>
-      <h3 class="h3">Comentarios</h2>
-      <%= render @article.comments %>
+    <div class="r0">
+      <% number_comments = @article.comments.count %>
+      <% if number_comments == 1 %>
+        <h3 class="h3"><%= number_comments = "#{number_comments} comentario" %></h3>
+      <% else %>
+        <h3 class="h3"><%= number_comments = "#{number_comments} comentarios" %></h3>
+      <% end %>
+    </div>
+
+    <% if @article.comments.count >= 1 %>
+
+      <% @article.comments.order(created_at: :desc).each do |comment| %>  
+        <%= render comment, controller:"comments" %>   
+      <% end %>
+
     <% else %>
-      <%= @article.comments.count %>
+
+      <div class="r1">
+        <%= "Todavía no hay ningún comentario. ¡Anímate y sé el primero!." %>
+      </div>
+
     <% end %>
-    </div class="a">
   </section>
 
 </section>

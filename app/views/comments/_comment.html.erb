@@ -1,17 +1,48 @@
-<p>
-  <strong>Autor:</strong>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comentario:</strong>
-  <%= comment.body %>
-</p>
+<% if comment.commenter && comment.body %>
 
-<% if current_user && current_user.admin_flag == true %>
-	<p>
-		<%= link_to 'Eliminar comentario', [comment.article, comment],
-		             method: :delete,
-		             data: { confirm: '¿Estás seguro de que quieres eliminar este comentario?' } %>
-	</p>
+  <div class="r1">
+    
+    <div class="r11">
+      <div class="c1">
+        <%= "Fecha:" %>
+      </div>
+      <div class="c2">
+        <% c_time = comment.created_at %>
+        <% months = {1=> "Enero", 2=> "Febrero", 3=> "Marzo",
+          4=> "Abril", 5=> "Mayo", 6=> "Junio", 7=> "Julio",
+          8=> "Agosto", 9=> "Septiembre", 10=> "Octubre",
+          11=> "Noviembre", 12=> "Diciembre"} %>
+        <% month = months[c_time.month] %>
+        <%= "#{c_time.day} de #{month} de #{c_time.year}" %>
+        <%= "a las " + c_time.strftime(" %H:%M ") + " horas" %>
+      </div>
+    </div>
+
+    <div class="r12">
+      <div class="c1">
+      	<%= "Autor:" %>
+      </div>
+    	<div class="c2">
+        <%= "#{comment.commenter}" %>
+      </div>
+    </div>
+
+
+    <div class="r13">
+    	<div class="c1">
+    		<%= "Comentario:" %>
+    	</div>
+    	<div class="c2">
+        <%= comment.body %>
+      </div>
+    </div>
+  
+    <% if current_user && current_user.admin_flag == true %>
+    	<div class="r14">
+    		<%= link_to '✘ Eliminar', [comment.article, comment],
+	  	            method: :delete,
+	  	            data: { confirm: '¿Estás seguro de que   quieres eliminar este comentario?' } %>
+  	  </div>
+    <% end %>
+  </div>  
 <% end %>
